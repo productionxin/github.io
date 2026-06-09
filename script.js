@@ -207,3 +207,96 @@
   }
 
 })();
+
+  // ── SHOWREEL PLAY BUTTON ──────────────────
+  var playBtn = document.getElementById('playBtn');
+  var reelPoster = document.getElementById('reelPoster');
+  var reelEmbed = document.getElementById('reelEmbed');
+  var reelIframe = document.getElementById('reelIframe');
+
+  if (playBtn) {
+    playBtn.addEventListener('click', function () {
+      var src = reelIframe.getAttribute('data-src');
+      if (src) {
+        reelIframe.setAttribute('src', src);
+        reelPoster.style.display = 'none';
+        reelEmbed.style.display = 'block';
+      }
+    });
+    // Also clicking the poster image triggers play
+    if (reelPoster) {
+      reelPoster.addEventListener('click', function (e) {
+        if (e.target !== playBtn && !playBtn.contains(e.target)) {
+          playBtn.click();
+        }
+      });
+    }
+  }
+
+  // ── PORTFOLIO VIDEO MODAL ─────────────────
+  var modal = document.getElementById('videoModal');
+  var modalIframe = document.getElementById('modalIframe');
+  var modalClose = document.getElementById('modalClose');
+  var modalBackdrop = document.getElementById('modalBackdrop');
+
+  function openModal(videoId, platform) {
+    if (!videoId || videoId.indexOf('YOUR_') === 0) {
+      alert('Video coming soon — follow us on Instagram @productionx.in for our latest work!');
+      return;
+    }
+    var src = platform === 'vimeo'
+      ? 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&color=C9A84C&title=0&byline=0&portrait=0'
+      : 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1';
+    modalIframe.setAttribute('src', src);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    modalIframe.setAttribute('src', '');
+    document.body.style.overflow = '';
+  }
+
+  // Attach click to all portfolio play buttons
+  document.querySelectorAll('.pcard-thumb').forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
+      var videoId = this.getAttribute('data-video-id');
+      var platform = this.getAttribute('data-platform') || 'youtube';
+      openModal(videoId, platform);
+    });
+  });
+
+  if (modalClose) { modalClose.addEventListener('click', closeModal); }
+  if (modalBackdrop) { modalBackdrop.addEventListener('click', closeModal); }
+
+  // Close modal on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // ── PORTFOLIO FILTER TABS ─────────────────
+  var tabs = document.querySelectorAll('.ptab');
+  var cards = document.querySelectorAll('.portfolio-card');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var filter = this.getAttribute('data-filter');
+
+      // Update active tab
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      this.classList.add('active');
+
+      // Filter cards
+      cards.forEach(function (card) {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
