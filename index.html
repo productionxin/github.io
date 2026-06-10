@@ -1,507 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Production X Creative — South India's premium cinematic content studio. Cinematic content production and social media management for premium brands across Hyderabad and Vizag."/>
-  <meta name="keywords" content="content production Hyderabad, social media management Hyderabad, cinematic content, brand films, Production X"/>
-  <meta property="og:title" content="Production X Creative — Every Frame Earns Its Place"/>
-  <meta property="og:description" content="Cinematic content production and social media management for premium brands across South India."/>
-  <meta property="og:image" content="og-image.jpg"/>
-  <meta property="og:url" content="https://productionx.in"/>
-  <meta property="og:type" content="website"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Production X Creative — South India's premium cinematic content studio and social media management agency. Serving automotive, hospitality, fashion and lifestyle brands across Hyderabad and Vizag." />
+  <meta name="keywords" content="content production Hyderabad, social media management Hyderabad, cinematic content, brand films, Production X, premium content agency" />
+  <meta property="og:title" content="Production X Creative — Every Frame Earns Its Place" />
+  <meta property="og:description" content="Cinematic content production and social media management for premium brands across South India." />
+  <meta property="og:image" content="og-image.jpg" />
+  <meta property="og:url" content="https://productionx.in" />
+  <meta property="og:type" content="website" />
   <title>Production X Creative — Every Frame Earns Its Place</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
-  <link rel="apple-touch-icon" href="logo.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;0,600;1,200;1,300;1,400&family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- CURSOR -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursorFollower"></div>
-
-  <!-- NAV -->
   <nav class="nav" id="nav">
     <a href="#hero" class="nav-logo">
-      <img src="logo.png" alt="Production X" class="nav-logo-img"/>
-      <span class="nav-brand">PRODUCTION <em>X</em></span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
-      <span></span><span></span>
+  <img src="logo.png" alt="Production X" width="36" height="48" />
+</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#work" class="nav-link">Work</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#packages" class="nav-link">Packages</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#reel">Our Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#packages">Packages</a></li>
       <li><a href="#book" class="nav-cta">Book a Call</a></li>
     </ul>
   </nav>
 
-  <!-- HERO PARALLAX -->
   <section class="hero" id="hero">
-    <div class="hero-layer hero-layer--bg" data-parallax="0.4">
+    <div class="hero-bg">
       <video class="hero-video" autoplay muted loop playsinline poster="hero-poster.jpg">
-        <source src="showreel-bg.mp4" type="video/mp4"/>
+        <source src="showreel-bg.mp4" type="video/mp4" />
       </video>
-      <div class="hero-vignette"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grain"></div>
     </div>
-    <div class="hero-layer hero-layer--mid" data-parallax="0.2">
-      <div class="hero-lines">
-        <div class="hline hline--1"></div>
-        <div class="hline hline--2"></div>
-        <div class="hline hline--3"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">South India's Premium Cinematic Studio</p>
+      <h1 class="hero-headline">
+        We make brands<br/>
+        <em>impossible to<br/>scroll past.</em>
+      </h1>
+      <p class="hero-sub">Cinematic Content Production &amp; Social Media Management<br/>for premium brands across Hyderabad, Vizag &amp; Pan India.</p>
+      <div class="hero-actions">
+        <a href="#reel" class="btn-primary">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style="margin-right:8px"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+          Watch Our Work
+        </a>
+        <a href="#book" class="btn-ghost">Book a Free Call</a>
       </div>
     </div>
-    <div class="hero-layer hero-layer--front" data-parallax="0.05">
-      <div class="hero-content">
-        <div class="hero-eyebrow-wrap">
-          <div class="eyebrow-line"></div>
-          <span class="hero-eyebrow">South India's Premium Cinematic Studio</span>
-        </div>
-        <h1 class="hero-headline">
-          <span class="hero-word" data-delay="0">We</span>
-          <span class="hero-word" data-delay="80">make</span>
-          <span class="hero-word hero-word--gold" data-delay="160">brands</span><br/>
-          <em class="hero-italic" data-delay="240">impossible</em>
-          <span class="hero-word" data-delay="320">to</span><br/>
-          <span class="hero-word hero-word--outline" data-delay="400">scroll</span>
-          <span class="hero-word" data-delay="480">past.</span>
-        </h1>
-        <p class="hero-sub">Cinematic Content Production &amp; Social Media Management<br/>Hyderabad · Vizag · Pan India</p>
-        <div class="hero-actions">
-          <a href="#work" class="btn-reel">
-            <div class="btn-reel-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg>
-            </div>
-            Watch Our Work
-          </a>
-          <a href="#book" class="btn-outline">Book a Free Call</a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-scroll-indicator">
-      <div class="scroll-track">
-        <div class="scroll-thumb"></div>
-      </div>
-      <span>Scroll</span>
-    </div>
-    <div class="hero-tagline-fixed">Every frame earns its place.</div>
+    <div class="hero-tagline"><span>Every frame earns its place.</span></div>
+    <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
   </section>
 
-  <!-- CREDENTIALS TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker" id="ticker">
-      <span class="tick-item">Mercedes-Benz</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">1UJ Fashion</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">Ujwala Group</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">1UJ Lifestyle</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">Silver Star Hyderabad</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">Mercedes-Benz</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">1UJ Fashion</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">Ujwala Group</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">1UJ Lifestyle</span>
-      <span class="tick-sep">✦</span>
-      <span class="tick-item">Silver Star Hyderabad</span>
-      <span class="tick-sep">✦</span>
+  <section class="creds">
+    <p class="creds-label">Trusted by</p>
+    <div class="creds-logos">
+      <span class="cred-item">Mercedes-Benz</span><span class="cred-dot">·</span>
+      <span class="cred-item">1UJ Fashion</span><span class="cred-dot">·</span>
+      <span class="cred-item">Ujwala Group</span><span class="cred-dot">·</span>
+      <span class="cred-item">1UJ Lifestyle</span><span class="cred-dot">·</span>
+      <span class="cred-item">Silver Star Hyderabad</span>
     </div>
-  </div>
+  </section>
 
-  <!-- SERVICES PARALLAX -->
   <section class="services" id="services">
-    <div class="services-bg-text" data-parallax-text="0.08">STUDIO</div>
     <div class="container">
-      <div class="reveal-wrap">
-        <p class="section-eye reveal-item">What We Do</p>
-        <h2 class="section-title reveal-item">Two services.<br/><em>One studio.</em></h2>
-        <p class="section-desc reveal-item">The only studio in Hyderabad that produces cinematic content <em>and</em> manages your entire social media — under one roof, one retainer.</p>
+      <div class="section-header">
+        <p class="section-eyebrow">What We Do</p>
+        <h2 class="section-title">Two services.<br/>One studio.</h2>
+        <p class="section-desc">We are the only studio in Hyderabad that produces cinematic content and manages your entire social media presence — under one roof, for one monthly retainer.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal-item" data-delay="0">
-          <div class="scard-number">01</div>
-          <div class="scard-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <rect x="1" y="7" width="28" height="19" rx="2" stroke="#C9A84C" stroke-width="1.2"/>
-              <path d="M29 14L38 10V27L29 23" stroke="#C9A84C" stroke-width="1.2" stroke-linejoin="round"/>
-              <circle cx="15" cy="16" r="4" stroke="#F5F5F0" stroke-width="0.8" opacity="0.4"/>
+        <div class="service-card">
+          <div class="service-icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <rect x="1" y="5" width="26" height="18" rx="2" stroke="#C9A84C" stroke-width="1.5"/>
+              <path d="M27 12L35 8V24L27 20" stroke="#C9A84C" stroke-width="1.5" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3 class="scard-title">Cinematic Content<br/>Production</h3>
-          <p class="scard-desc">Every frame planned, shot, and edited with intention. Brand films, delivery reels, product shoots, events — all at film quality.</p>
-          <ul class="scard-list">
-            <li>Brand Films &amp; Showreels</li>
+          <h3 class="service-title">Cinematic Content Production</h3>
+          <p class="service-desc">We plan, shoot, direct, and edit content that makes your brand stand apart. From delivery reels to full brand films — every frame is intentional.</p>
+          <ul class="service-list">
+            <li>Brand Films (2–5 min)</li>
             <li>Delivery &amp; Event Reels</li>
-            <li>Fashion &amp; Product Shoots</li>
+            <li>Product &amp; Fashion Shoots</li>
+            <li>Podcast Production</li>
             <li>Event Coverage</li>
-            <li>YouTube &amp; Shorts</li>
+            <li>YouTube &amp; Shorts Content</li>
           </ul>
-          <div class="scard-line"></div>
         </div>
-        <div class="service-card reveal-item" data-delay="120">
-          <div class="scard-number">02</div>
-          <div class="scard-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-              <rect x="4" y="4" width="32" height="23" rx="2" stroke="#C9A84C" stroke-width="1.2"/>
-              <line x1="4" y1="32" x2="36" y2="32" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/>
-              <line x1="20" y1="27" x2="20" y2="32" stroke="#C9A84C" stroke-width="1.2"/>
-              <line x1="12" y1="13" x2="28" y2="13" stroke="#F5F5F0" stroke-width="0.8" opacity="0.5"/>
-              <line x1="12" y1="18" x2="23" y2="18" stroke="#F5F5F0" stroke-width="0.8" opacity="0.5"/>
-              <circle cx="30" cy="18" r="4" stroke="#C9A84C" stroke-width="0.8"/>
-              <polyline points="28,18 30,20 33,16" stroke="#C9A84C" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="service-card service-card--accent">
+          <div class="service-icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <rect x="3" y="3" width="30" height="22" rx="2" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="3" y1="30" x2="33" y2="30" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="18" y1="25" x2="18" y2="30" stroke="#C9A84C" stroke-width="1.5"/>
+              <line x1="11" y1="12" x2="25" y2="12" stroke="#F5F5F0" stroke-width="1" stroke-linecap="round"/>
+              <line x1="11" y1="16" x2="21" y2="16" stroke="#F5F5F0" stroke-width="1" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3 class="scard-title">Social Media<br/>Management</h3>
-          <p class="scard-desc">Full ownership of your social presence. Content calendars, captions, scheduling, analytics, and growth — handled completely.</p>
-          <ul class="scard-list">
+          <h3 class="service-title">Social Media Management</h3>
+          <p class="service-desc">We own your social media presence end-to-end. Content calendar, captions, scheduling, growth strategy — your brand stays consistent, active, and growing.</p>
+          <ul class="service-list">
             <li>Monthly Content Calendar</li>
             <li>Caption Writing &amp; Scheduling</li>
             <li>Instagram &amp; YouTube Growth</li>
             <li>Performance Analytics</li>
+            <li>Competitor Analysis</li>
             <li>Paid Ads Integration</li>
           </ul>
-          <div class="scard-line"></div>
         </div>
       </div>
-      <div class="services-statement reveal-item">
-        <img src="logo.png" alt="" class="statement-logo"/>
-        <p>Great content without strategy is wasted.<br/>Strategy without great content is invisible.<br/><strong>We deliver both.</strong></p>
+      <div class="services-note">
+        <svg width="18" height="24" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0" opacity="0.5"/>
+          <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C" opacity="0.5"/>
+        </svg>
+        <p>Great content without strategy is wasted. Strategy without great content is invisible. We deliver both.</p>
       </div>
     </div>
   </section>
 
-  <!-- WORK / PARALLAX SHOWCASE -->
-  <section class="work" id="work">
+  <section class="reel-section" id="reel">
     <div class="container">
-      <div class="reveal-wrap">
-        <p class="section-eye reveal-item">Our Work</p>
-        <h2 class="section-title reveal-item">Cinematic content<br/><em>that converts.</em></h2>
+      <div class="section-header">
+        <p class="section-eyebrow">Our Work</p>
+        <h2 class="section-title">Cinematic content<br/>that converts.</h2>
+        <p class="section-desc">100+ brand films. 1600+ reels. Premium automotive, hospitality, fashion and lifestyle brands across South India.</p>
       </div>
     </div>
 
-    <!-- MAIN SHOWREEL -->
-    <div class="showreel-block">
-      <div class="showreel-sticky" id="showreelSticky">
+    <div class="showreel-wrap">
+      <div class="showreel-player" id="showreelPlayer">
         <div class="reel-poster" id="reelPoster">
-          <img src="reel-poster.jpg" alt="Production X Showreel 2026" class="reel-poster-img"/>
-          <div class="reel-overlay">
-            <div class="reel-info">
-              <span class="reel-label">Showreel 2026</span>
-              <span class="reel-duration">2:00 min</span>
-            </div>
-            <button class="reel-play-btn" id="playBtn">
-              <div class="play-ring"></div>
-              <svg width="20" height="20" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="#0A0A0A"/></svg>
+          <img src="reel-poster.jpg" alt="Production X Showreel 2026" class="poster-img" />
+          <div class="poster-overlay">
+            <button class="play-btn" id="playBtn" aria-label="Play showreel">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <polygon points="5,3 19,12 5,21" fill="#0A0A0A"/>
+              </svg>
             </button>
-            <p class="reel-cta-text">Play Showreel</p>
+            <div class="poster-label">
+              <span class="poster-title">Production X — Showreel 2026</span>
+              <span class="poster-sub">2 min · Automotive · Hospitality · Fashion · Lifestyle</span>
+            </div>
           </div>
         </div>
         <div class="reel-embed" id="reelEmbed" style="display:none;">
           <iframe id="reelIframe" src=""
-            data-src="https://www.youtube.com/embed/YOUR_SHOWREEL_ID?autoplay=1&rel=0&modestbranding=1&color=white"
-            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            data-src="https://www.youtube.com/embed/5plk5TNdv8c?autoplay=1&rel=0&modestbranding=1&color=white"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen title="Production X Showreel 2026"></iframe>
         </div>
       </div>
       <div class="showreel-caption">
-        Automotive · Hospitality · Fashion · Lifestyle · Corporate
+        <span>Full showreel — 2026</span>
+        <span class="reel-dot">·</span>
+        <span>Automotive · Hospitality · Fashion · Lifestyle</span>
       </div>
     </div>
 
-    <!-- PORTFOLIO FILTER + GRID -->
     <div class="container">
-      <div class="portfolio-tabs">
+      <div class="portfolio-tabs" id="portfolioTabs">
         <button class="ptab active" data-filter="all">All</button>
         <button class="ptab" data-filter="automotive">Automotive</button>
         <button class="ptab" data-filter="hospitality">Hospitality</button>
         <button class="ptab" data-filter="fashion">Fashion</button>
         <button class="ptab" data-filter="corporate">Corporate</button>
       </div>
+
       <div class="portfolio-grid" id="portfolioGrid">
 
-        <div class="pcard reveal-item" data-category="automotive">
-          <div class="pcard-media" data-video-id="YOUR_MERCEDES_VIDEO_ID" data-platform="youtube">
-            <img src="thumb-mercedes.jpg" alt="Mercedes-Benz Maybach Delivery Reel" class="pcard-img"/>
-            <div class="pcard-hover">
-              <button class="pcard-play"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg></button>
-              <span class="pcard-dur">1:24</span>
+        <div class="portfolio-card" data-category="automotive">
+          <div class="pcard-thumb" data-video-id="YOUR_MERCEDES_VIDEO_ID" data-platform="youtube">
+            <img src="thumb-mercedes.jpg" alt="Mercedes-Benz Maybach Delivery Reel" class="pcard-img" />
+            <div class="pcard-overlay">
+              <button class="pcard-play" aria-label="Play Mercedes video">
+                <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+              </button>
+              <span class="pcard-duration">1:24</span>
             </div>
           </div>
-          <div class="pcard-body">
-            <span class="pcard-cat">Automotive</span>
+          <div class="pcard-info">
+            <span class="pcard-category">Automotive</span>
             <h3 class="pcard-title">Mercedes-Benz Maybach — Delivery Reel</h3>
-            <p class="pcard-sub">Silver Star · India's first Maybach showroom</p>
+            <p class="pcard-brand">Silver Star, Hyderabad · India's first Maybach showroom</p>
           </div>
         </div>
 
-        <div class="pcard reveal-item" data-category="automotive" data-delay="60">
-          <div class="pcard-media" data-video-id="YOUR_BMW_VIDEO_ID" data-platform="youtube">
-            <img src="thumb-bmw.jpg" alt="BMW Showroom Content" class="pcard-img"/>
-            <div class="pcard-hover">
-              <button class="pcard-play"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg></button>
-              <span class="pcard-dur">0:58</span>
+        <div class="portfolio-card" data-category="automotive">
+          <div class="pcard-thumb" data-video-id="YOUR_BMW_VIDEO_ID" data-platform="youtube">
+            <img src="thumb-bmw.jpg" alt="BMW Showroom Content" class="pcard-img" />
+            <div class="pcard-overlay">
+              <button class="pcard-play" aria-label="Play BMW video">
+                <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+              </button>
+              <span class="pcard-duration">0:58</span>
             </div>
           </div>
-          <div class="pcard-body">
-            <span class="pcard-cat">Automotive</span>
+          <div class="pcard-info">
+            <span class="pcard-category">Automotive</span>
             <h3 class="pcard-title">BMW — Showroom Content</h3>
-            <p class="pcard-sub">Premium automotive · Hyderabad</p>
+            <p class="pcard-brand">Premium automotive · Hyderabad</p>
           </div>
         </div>
 
-        <div class="pcard reveal-item" data-category="hospitality" data-delay="120">
-          <div class="pcard-media" data-video-id="YOUR_HOTEL_VIDEO_ID" data-platform="youtube">
-            <img src="thumb-hotel.jpg" alt="Hotel Brand Film" class="pcard-img"/>
-            <div class="pcard-hover">
-              <button class="pcard-play"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg></button>
-              <span class="pcard-dur">2:10</span>
+        <div class="portfolio-card" data-category="hospitality">
+          <div class="pcard-thumb" data-video-id="YOUR_HOTEL_VIDEO_ID" data-platform="youtube">
+            <img src="thumb-hotel.jpg" alt="Hotel Brand Film" class="pcard-img" />
+            <div class="pcard-overlay">
+              <button class="pcard-play" aria-label="Play hotel video">
+                <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+              </button>
+              <span class="pcard-duration">2:10</span>
             </div>
           </div>
-          <div class="pcard-body">
-            <span class="pcard-cat">Hospitality</span>
+          <div class="pcard-info">
+            <span class="pcard-category">Hospitality</span>
             <h3 class="pcard-title">Hotel Brand Film</h3>
-            <p class="pcard-sub">Luxury hospitality · Hyderabad</p>
+            <p class="pcard-brand">Luxury hospitality · Hyderabad</p>
           </div>
         </div>
 
-        <div class="pcard reveal-item" data-category="hospitality" data-delay="180">
-          <div class="pcard-media" data-video-id="YOUR_CAFE_VIDEO_ID" data-platform="youtube">
-            <img src="thumb-cafe.jpg" alt="Premium Cafe Ambiance Reel" class="pcard-img"/>
-            <div class="pcard-hover">
-              <button class="pcard-play"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg></button>
-              <span class="pcard-dur">0:45</span>
+        <div class="portfolio-card" data-category="hospitality">
+          <div class="pcard-thumb" data-video-id="YOUR_CAFE_VIDEO_ID" data-platform="youtube">
+            <img src="thumb-cafe.jpg" alt="Premium Cafe Ambiance Reel" class="pcard-img" />
+            <div class="pcard-overlay">
+              <button class="pcard-play" aria-label="Play cafe video">
+                <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+              </button>
+              <span class="pcard-duration">0:45</span>
             </div>
           </div>
-          <div class="pcard-body">
-            <span class="pcard-cat">Hospitality</span>
+          <div class="pcard-info">
+            <span class="pcard-category">Hospitality</span>
             <h3 class="pcard-title">Premium Cafe — Ambiance Reel</h3>
-            <p class="pcard-sub">F&amp;B · Jubilee Hills, Hyderabad</p>
+            <p class="pcard-brand">F&amp;B · Jubilee Hills, Hyderabad</p>
           </div>
         </div>
 
-        <div class="pcard reveal-item" data-category="fashion" data-delay="240">
-          <div class="pcard-media" data-video-id="YOUR_1UJ_VIDEO_ID" data-platform="youtube">
-            <img src="thumb-fashion.jpg" alt="1UJ Fashion Brand Film" class="pcard-img"/>
-            <div class="pcard-hover">
-              <button class="pcard-play"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg></button>
-              <span class="pcard-dur">1:45</span>
+        <div class="portfolio-card" data-category="fashion">
+          <div class="pcard-thumb" data-video-id="YOUR_1UJ_VIDEO_ID" data-platform="youtube">
+            <img src="thumb-fashion.jpg" alt="1UJ Fashion Brand Film" class="pcard-img" />
+            <div class="pcard-overlay">
+              <button class="pcard-play" aria-label="Play fashion video">
+                <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+              </button>
+              <span class="pcard-duration">1:45</span>
             </div>
           </div>
-          <div class="pcard-body">
-            <span class="pcard-cat">Fashion</span>
+          <div class="pcard-info">
+            <span class="pcard-category">Fashion</span>
             <h3 class="pcard-title">1UJ Fashion — Brand Film</h3>
-            <p class="pcard-sub">Ujwala Group · Premium Fashion</p>
+            <p class="pcard-brand">Ujwala Group · Premium Fashion</p>
           </div>
         </div>
 
-        <div class="pcard reveal-item" data-category="corporate" data-delay="300">
-          <div class="pcard-media" data-video-id="YOUR_EVENT_VIDEO_ID" data-platform="youtube">
-            <img src="thumb-event.jpg" alt="Brand Launch Event" class="pcard-img"/>
-            <div class="pcard-hover">
-              <button class="pcard-play"><svg width="16" height="16" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg></button>
-              <span class="pcard-dur">3:20</span>
+        <div class="portfolio-card" data-category="corporate">
+          <div class="pcard-thumb" data-video-id="YOUR_EVENT_VIDEO_ID" data-platform="youtube">
+            <img src="thumb-event.jpg" alt="Brand Launch Event Coverage" class="pcard-img" />
+            <div class="pcard-overlay">
+              <button class="pcard-play" aria-label="Play event video">
+                <svg width="16" height="16" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+              </button>
+              <span class="pcard-duration">3:20</span>
             </div>
           </div>
-          <div class="pcard-body">
-            <span class="pcard-cat">Corporate</span>
+          <div class="pcard-info">
+            <span class="pcard-category">Corporate</span>
             <h3 class="pcard-title">Brand Launch — Event Coverage</h3>
-            <p class="pcard-sub">Corporate · Hyderabad</p>
+            <p class="pcard-brand">Corporate · Hyderabad</p>
           </div>
         </div>
 
       </div>
-      <div class="portfolio-more">
-        <a href="https://instagram.com/productionx.in" target="_blank" rel="noopener" class="btn-outline">
-          Full Portfolio on Instagram ↗
+
+      <div class="portfolio-cta">
+        <p>Want to see more?</p>
+        <a href="https://instagram.com/productionx.in" target="_blank" rel="noopener" class="btn-ghost">
+          View Full Portfolio on Instagram ↗
         </a>
       </div>
     </div>
   </section>
 
-  <!-- VIDEO MODAL -->
-  <div class="video-modal" id="videoModal">
-    <div class="modal-bg" id="modalBg"></div>
-    <div class="modal-box">
-      <button class="modal-close" id="modalClose">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+  <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close video">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
           <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
           <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        Close
       </button>
-      <div class="modal-frame">
+      <div class="modal-player">
         <iframe id="modalIframe" src="" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen title="Production X — Video"></iframe>
       </div>
     </div>
   </div>
 
-  <!-- COMING SOON TOAST -->
-  <div class="toast" id="toast">
-    <img src="logo.png" alt="" width="32" height="32" style="object-fit:contain;flex-shrink:0;"/>
-    <div>
-      <p class="toast-title">Video Coming Soon</p>
-      <a href="https://instagram.com/productionx.in" target="_blank" rel="noopener" class="toast-link">@productionx.in ↗</a>
-    </div>
-  </div>
-
-  <!-- STATS PARALLAX -->
   <section class="stats">
-    <div class="stats-parallax-bg" data-parallax="0.15"></div>
     <div class="container">
       <div class="stats-grid">
-        <div class="stat-block reveal-item">
-          <span class="stat-n" data-target="50">0</span><span class="stat-plus">+</span>
-          <span class="stat-l">Brand Films</span>
-        </div>
-        <div class="stat-block reveal-item" data-delay="80">
-          <span class="stat-n" data-target="300">0</span><span class="stat-plus">+</span>
-          <span class="stat-l">Reels Edited</span>
-        </div>
-        <div class="stat-block reveal-item" data-delay="160">
-          <span class="stat-n" data-target="8">0</span><span class="stat-plus">+</span>
-          <span class="stat-l">Premium Brands</span>
-        </div>
-        <div class="stat-block reveal-item" data-delay="240">
-          <span class="stat-n" data-target="3">0</span><span class="stat-plus">+</span>
-          <span class="stat-l">Years Experience</span>
-        </div>
+        <div class="stat-item"><span class="stat-num">100<em>+</em></span><span class="stat-label">Brand Films Produced</span></div>
+        <div class="stat-item"><span class="stat-num">1600<em>+</em></span><span class="stat-label">Reels Edited</span></div>
+        <div class="stat-item"><span class="stat-num">15<em>+</em></span><span class="stat-label">Premium Brands</span></div>
+        <div class="stat-item"><span class="stat-num">10<em>+</em></span><span class="stat-label">Years Experience</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ABOUT PARALLAX -->
   <section class="about" id="about">
-    <div class="about-parallax-mark" data-parallax="0.12">
-      <img src="logo.png" alt="" class="about-bg-logo"/>
-    </div>
     <div class="container">
       <div class="about-grid">
-        <div class="about-left">
-          <p class="section-eye reveal-item">About</p>
-          <h2 class="section-title reveal-item">We were on<br/>your side of<br/><em>the table.</em></h2>
-          <div class="about-credentials reveal-item">
-            <div class="cred-item">
-              <span class="cred-year">2021–23</span>
-              <div class="cred-body">
-                <span class="cred-role">Content Producer</span>
-                <span class="cred-brand">Mercedes-Benz · AP &amp; Telangana</span>
-              </div>
-            </div>
-            <div class="cred-item">
-              <span class="cred-year">2023–24</span>
-              <div class="cred-body">
-                <span class="cred-role">Head of Creative &amp; Marketing</span>
-                <span class="cred-brand">Ujwala Group · 1UJ Fashion &amp; Lifestyle</span>
-              </div>
-            </div>
-            <div class="cred-item">
-              <span class="cred-year">2026</span>
-              <div class="cred-body">
-                <span class="cred-role">Founder</span>
-                <span class="cred-brand">Production X Creative Studio</span>
-              </div>
-            </div>
-          </div>
+        <div class="about-mark">
+          <!-- Replace this SVG with: <img src="kiran.jpg" alt="Kiran Basa, Founder Production X" style="width:100%;max-width:420px;" /> -->
+          <svg width="160" height="210" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0" opacity="0.15"/>
+            <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C" opacity="0.25"/>
+          </svg>
         </div>
-        <div class="about-right reveal-item">
-          <!-- Replace with: <img src="kiran.jpg" alt="Kiran Basa" class="about-photo"/> -->
-          <div class="about-photo-placeholder">
-            <img src="logo.png" alt="Production X" class="about-ph-logo"/>
-            <span class="about-ph-label">Kiran Basa<br/>Founder</span>
-          </div>
-          <div class="about-quote">
-            <p>"I spent 3 years on the brand side — at Mercedes-Benz and Ujwala Group — before starting Production X. I know what premium brands actually need. Because I was one."</p>
-            <span class="quote-sig">— Kiran Basa</span>
+        <div class="about-content">
+          <p class="section-eyebrow">About</p>
+          <h2 class="section-title">We were on your<br/>side of the table.</h2>
+          <p class="about-body">Kiran Basa spent 6 years as a brand-side creative before starting Production X. As Content Producer at Mercedes-Benz across AP &amp; Telangana — and Head of Creative &amp; Marketing at Ujwala Group — he knows exactly what premium brand managers need, what frustrates them about agencies, and what makes content actually perform.</p>
+          <p class="about-body">That perspective is what Production X is built on. We don't just shoot and deliver. We think like the brand, plan like the strategist, and execute like the studio.</p>
+          <div class="about-credentials">
+            <div class="credential">
+              <span class="credential-role">Content Producer</span>
+              <span class="credential-brand">Mercedes-Benz · AP &amp; Telangana</span>
+            </div>
+            <div class="credential">
+              <span class="credential-role">Head of Creative &amp; Marketing</span>
+              <span class="credential-brand">Ujwala Group · 1UJ Fashion &amp; Lifestyle</span>
+            </div>
+            <div class="credential">
+              <span class="credential-role">International Production Partner</span>
+              <span class="credential-brand">Working with media agencies in the UK</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
   <section class="process">
-    <div class="process-bg-text" data-parallax-text="0.06">PROCESS</div>
     <div class="container">
-      <div class="reveal-wrap">
-        <p class="section-eye reveal-item">How We Work</p>
-        <h2 class="section-title reveal-item">Simple.<br/><em>Always delivered.</em></h2>
+      <div class="section-header">
+        <p class="section-eyebrow">How We Work</p>
+        <h2 class="section-title">Simple. Transparent.<br/>Always delivered.</h2>
       </div>
-      <div class="process-track">
-        <div class="process-line"></div>
-        <div class="process-step reveal-item" data-delay="0">
-          <div class="pstep-dot"></div>
-          <div class="pstep-num">01</div>
-          <div class="pstep-body">
-            <h3>Brief &amp; Discovery</h3>
-            <p>30-min call. Understand your brand, goals, and what's not working with your current content.</p>
-          </div>
-        </div>
-        <div class="process-step reveal-item" data-delay="80">
-          <div class="pstep-dot"></div>
-          <div class="pstep-num">02</div>
-          <div class="pstep-body">
-            <h3>Strategy &amp; Planning</h3>
-            <p>Content calendar built. Shoot dates confirmed. Social management plan locked in.</p>
-          </div>
-        </div>
-        <div class="process-step reveal-item" data-delay="160">
-          <div class="pstep-dot"></div>
-          <div class="pstep-num">03</div>
-          <div class="pstep-body">
-            <h3>Production</h3>
-            <p>You show up. We handle everything else — direction, crew, equipment, shoot management.</p>
-          </div>
-        </div>
-        <div class="process-step reveal-item" data-delay="240">
-          <div class="pstep-dot"></div>
-          <div class="pstep-num">04</div>
-          <div class="pstep-body">
-            <h3>Edit &amp; Review</h3>
-            <p>Content edited to your brand. One round of feedback. Approved and ready.</p>
-          </div>
-        </div>
-        <div class="process-step reveal-item" data-delay="320">
-          <div class="pstep-dot pstep-dot--gold"></div>
-          <div class="pstep-num pstep-num--gold">05</div>
-          <div class="pstep-body">
-            <h3>Delivery</h3>
-            <p>Published to your socials or delivered to your team — on time, every month.</p>
-          </div>
-        </div>
+      <div class="process-steps">
+        <div class="process-step"><div class="step-line"></div><div class="step-num">01</div><div class="step-content"><h3 class="step-title">Brief &amp; Discovery</h3><p class="step-desc">A 30-minute call to understand your brand, goals, and content requirements.</p></div></div>
+        <div class="process-step"><div class="step-line"></div><div class="step-num">02</div><div class="step-content"><h3 class="step-title">Strategy &amp; Planning</h3><p class="step-desc">We build your monthly content calendar — shoot dates, concepts, formats, social plan.</p></div></div>
+        <div class="process-step"><div class="step-line"></div><div class="step-num">03</div><div class="step-content"><h3 class="step-title">Production</h3><p class="step-desc">Our team handles the full shoot. You show up. We take care of everything else.</p></div></div>
+        <div class="process-step"><div class="step-line"></div><div class="step-num">04</div><div class="step-content"><h3 class="step-title">Edit &amp; Review</h3><p class="step-desc">Content edited to your brand. One round of feedback via our review platform.</p></div></div>
+        <div class="process-step"><div class="step-num">05</div><div class="step-content"><h3 class="step-title">Delivery</h3><p class="step-desc">Files delivered or posted directly to your social media — on schedule, every time.</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- PACKAGES -->
   <section class="packages" id="packages">
     <div class="container">
-      <div class="reveal-wrap">
-        <p class="section-eye reveal-item">Packages</p>
-        <h2 class="section-title reveal-item">Built around<br/><em>your goals.</em></h2>
-        <p class="section-desc reveal-item">Monthly retainers · 3-month minimum · 50% advance · Custom packages available</p>
+      <div class="section-header">
+        <p class="section-eyebrow">Packages</p>
+        <h2 class="section-title">Built around<br/>your goals.</h2>
+        <p class="section-desc">All packages are monthly retainers with a minimum 3-month commitment. 50% advance to initiate.</p>
       </div>
-      <div class="pkg-grid">
-        <div class="pkg-card reveal-item" data-delay="0">
-          <div class="pkg-top">
-            <span class="pkg-name">Foundation</span>
-            <div class="pkg-price">
-              <span class="pkg-cur">₹</span>
-              <span class="pkg-amt">75,000</span>
-              <span class="pkg-per">/mo</span>
-            </div>
+      <div class="packages-grid">
+        <div class="package-card">
+          <div class="package-header">
+            <span class="package-name">Foundation</span>
+            <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">75,000</span><span class="price-period">/month</span></div>
           </div>
-          <ul class="pkg-list">
+          <ul class="package-features">
             <li>8 Cinematic Reels / month</li>
             <li>10 Static Posts</li>
             <li>Stories Pack (10)</li>
@@ -509,19 +395,15 @@
             <li>1 Shoot Day / month</li>
             <li>Monthly Analytics Report</li>
           </ul>
-          <a href="#book" class="pkg-btn">Book a Call</a>
+          <a href="#book" class="btn-package">Book a Call</a>
         </div>
-        <div class="pkg-card pkg-card--feat reveal-item" data-delay="100">
-          <div class="pkg-feat-badge">Most Popular</div>
-          <div class="pkg-top">
-            <span class="pkg-name">Growth</span>
-            <div class="pkg-price">
-              <span class="pkg-cur">₹</span>
-              <span class="pkg-amt">1,25,000</span>
-              <span class="pkg-per">/mo</span>
-            </div>
+        <div class="package-card package-card--featured">
+          <div class="package-badge">Most Popular</div>
+          <div class="package-header">
+            <span class="package-name">Growth</span>
+            <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">1,25,000</span><span class="price-period">/month</span></div>
           </div>
-          <ul class="pkg-list">
+          <ul class="package-features">
             <li>15 Cinematic Reels / month</li>
             <li>1 Brand Film (2–3 min)</li>
             <li>Full Social Media Management</li>
@@ -529,18 +411,14 @@
             <li>2–3 Shoot Days / month</li>
             <li>Monthly Analytics &amp; Review</li>
           </ul>
-          <a href="#book" class="pkg-btn pkg-btn--feat">Book a Call</a>
+          <a href="#book" class="btn-package btn-package--featured">Book a Call</a>
         </div>
-        <div class="pkg-card reveal-item" data-delay="200">
-          <div class="pkg-top">
-            <span class="pkg-name">Signature</span>
-            <div class="pkg-price">
-              <span class="pkg-cur">₹</span>
-              <span class="pkg-amt">2,00,000</span>
-              <span class="pkg-per">/mo</span>
-            </div>
+        <div class="package-card">
+          <div class="package-header">
+            <span class="package-name">Signature</span>
+            <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">2,00,000</span><span class="price-period">/month</span></div>
           </div>
-          <ul class="pkg-list">
+          <ul class="package-features">
             <li>20+ Cinematic Reels / month</li>
             <li>2 Brand Films / month</li>
             <li>Full Social Management</li>
@@ -548,77 +426,66 @@
             <li>Performance Ads Integration</li>
             <li>Dedicated Account Manager</li>
           </ul>
-          <a href="#book" class="pkg-btn">Book a Call</a>
+          <a href="#book" class="btn-package">Book a Call</a>
         </div>
+      </div>
+      <div class="packages-custom">
+        <p>Need something specific? <a href="#book">Talk to us</a> — we build custom packages.</p>
       </div>
     </div>
   </section>
 
-  <!-- BOOKING -->
   <section class="booking" id="book">
-    <div class="booking-parallax-bg" data-parallax="0.1"></div>
     <div class="container">
       <div class="booking-grid">
-        <div class="booking-left reveal-item">
-          <p class="section-eye">Book a Call</p>
-          <h2 class="booking-title">Let's build<br/>something<br/><em>unforgettable.</em></h2>
-          <p class="booking-desc">Free 30-minute discovery call. We'll understand your brand and show you exactly what Production X can do for you.</p>
-          <div class="booking-links">
-            <a href="https://wa.me/919391926846" class="blink" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.6 6L0 24l6.3-1.65A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12a11.93 11.93 0 0 0-3.48-8.52z" fill="#C9A84C" opacity="0.15"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07a8.22 8.22 0 0 1-2.4-1.48 9.09 9.09 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37S7 8.42 7 9.97c0 1.55 1.13 3.05 1.28 3.26.15.2 2.22 3.4 5.38 4.76.75.33 1.34.52 1.8.66.75.24 1.44.21 1.98.13.6-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z" fill="#C9A84C"/></svg>
+        <div class="booking-left">
+          <p class="section-eyebrow">Book a Call</p>
+          <h2 class="booking-title">Let's build something your audience will remember.</h2>
+          <p class="booking-desc">Fill in your details and we'll get back to you within 24 hours to schedule a free 30-minute discovery call.</p>
+          <div class="booking-contact">
+            <a href="https://wa.me/919391926846" class="contact-link" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.6 6L0 24l6.3-1.65A11.93 11.93 0 0 0 12 24c6.63 0 12-5.37 12-12a11.93 11.93 0 0 0-3.48-8.52z" fill="#C9A84C" opacity="0.2"/><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07a8.22 8.22 0 0 1-2.4-1.48 9.09 9.09 0 0 1-1.66-2.07c-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37S7 8.42 7 9.97c0 1.55 1.13 3.05 1.28 3.26.15.2 2.22 3.4 5.38 4.76.75.33 1.34.52 1.8.66.75.24 1.44.21 1.98.13.6-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35z" fill="#C9A84C"/></svg>
               +91 93919 26846
             </a>
-            <a href="mailto:info@productionx.in" class="blink">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#C9A84C" stroke-width="1.2"/><path d="M2 7l10 7 10-7" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round"/></svg>
+            <a href="mailto:info@productionx.in" class="contact-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="#C9A84C" stroke-width="1.5"/><path d="M2 7l10 7 10-7" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round"/></svg>
               info@productionx.in
             </a>
-            <a href="https://instagram.com/productionx.in" class="blink" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="12" cy="12" r="5" stroke="#C9A84C" stroke-width="1.2"/><circle cx="17.5" cy="6.5" r="1" fill="#C9A84C"/></svg>
+            <a href="https://instagram.com/productionx.in" class="contact-link" target="_blank" rel="noopener">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="#C9A84C" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="#C9A84C" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="#C9A84C"/></svg>
               @productionx.in
             </a>
           </div>
         </div>
-        <div class="booking-right reveal-item" data-delay="100">
-          <form class="bform" id="bookingForm">
-            <div class="bform-row">
-              <div class="bform-group">
-                <label>Your Name</label>
-                <input type="text" name="name" placeholder="Your name" required/>
-              </div>
-              <div class="bform-group">
-                <label>Brand / Company</label>
-                <input type="text" name="brand" placeholder="Your brand" required/>
-              </div>
+        <div class="booking-right">
+          <form class="booking-form" id="bookingForm">
+            <div class="form-row">
+              <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="Your name" required /></div>
+              <div class="form-group"><label for="brand">Brand / Company</label><input type="text" id="brand" name="brand" placeholder="Your brand" required /></div>
             </div>
-            <div class="bform-row">
-              <div class="bform-group">
-                <label>Phone</label>
-                <input type="tel" name="phone" placeholder="+91 98765 43210" required/>
-              </div>
-              <div class="bform-group">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="you@brand.com" required/>
-              </div>
+            <div class="form-row">
+              <div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required /></div>
+              <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="you@brand.com" required /></div>
             </div>
-            <div class="bform-group">
-              <label>What do you need?</label>
-              <select name="service" required>
+            <div class="form-group">
+              <label for="service">What do you need?</label>
+              <select id="service" name="service" required>
                 <option value="" disabled selected>Select a service</option>
-                <option value="production">Cinematic Content Production</option>
-                <option value="social">Social Media Management</option>
+                <option value="content-production">Cinematic Content Production</option>
+                <option value="social-management">Social Media Management</option>
                 <option value="both">Both — Production &amp; Management</option>
-                <option value="film">Brand Film (One-off)</option>
-                <option value="event">Event Coverage</option>
+                <option value="brand-film">Brand Film (One-off)</option>
+                <option value="event-coverage">Event Coverage</option>
                 <option value="custom">Custom Package</option>
               </select>
             </div>
-            <div class="bform-group">
-              <label>Tell us about your brand</label>
-              <textarea name="message" rows="4" placeholder="What does your brand do, what's your goal, and what's holding back your content right now?"></textarea>
+            <div class="form-group">
+              <label for="message">Tell us about your brand</label>
+              <textarea id="message" name="message" rows="4" placeholder="What does your brand do, what's your goal, and what's holding back your content right now?"></textarea>
             </div>
-            <div class="bform-group">
-              <label>Monthly budget</label>
-              <select name="budget">
+            <div class="form-group">
+              <label for="budget">Monthly budget range</label>
+              <select id="budget" name="budget">
                 <option value="" disabled selected>Select budget range</option>
                 <option value="75k">₹75,000 – ₹1,00,000</option>
                 <option value="1l">₹1,00,000 – ₹1,50,000</option>
@@ -627,65 +494,70 @@
                 <option value="project">One-off Project</option>
               </select>
             </div>
-            <button type="submit" class="bform-submit" id="submitBtn">
-              Book My Free Call
-              <span class="submit-arrow">→</span>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span class="btn-text">Book My Free Call</span>
+              <span class="btn-icon">→</span>
             </button>
-            <p class="bform-note">We respond within 24 hours. No spam ever.</p>
+            <p class="form-note">We respond within 24 hours. No spam. No obligations.</p>
           </form>
-          <div class="bform-success" id="formSuccess">
-            <img src="logo.png" alt="Production X" width="60" height="60" style="object-fit:contain;margin-bottom:1.5rem;"/>
-            <h3>Request received.</h3>
-            <p>Kiran will reach out within 24 hours to confirm your free discovery call.</p>
-            <a href="https://wa.me/919391926846" target="_blank" rel="noopener" class="btn-reel" style="margin-top:2rem;display:inline-flex;">
-              <div class="btn-reel-icon"><svg width="12" height="12" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21" fill="currentColor"/></svg></div>
-              Chat on WhatsApp Now
-            </a>
+          <div class="form-success" id="formSuccess">
+            <div class="success-mark">
+              <svg width="28" height="36" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0"/>
+                <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C"/>
+              </svg>
+            </div>
+            <h3>We've received your request.</h3>
+            <p>Kiran will reach out within 24 hours to schedule your free discovery call.</p>
+            <a href="https://wa.me/919391926846" target="_blank" rel="noopener" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Chat on WhatsApp now</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-parallax-bg" data-parallax="0.08"></div>
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="logo.png" alt="Production X" class="footer-logo-img"/>
-          <div>
-            <span class="footer-wordmark">PRODUCTION <em>X</em></span>
-            <span class="footer-sub">CREATIVE STUDIO</span>
-          </div>
+          <a href="#hero" class="footer-logo">
+            <svg width="24" height="32" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0" opacity="0.8"/>
+              <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C"/>
+            </svg>
+            <div>
+              <span class="footer-wordmark">PRODUCTION <em>X</em></span>
+              <span class="footer-sub">CREATIVE STUDIO</span>
+            </div>
+          </a>
+          <p class="footer-tagline">Every frame earns its place.</p>
         </div>
-        <p class="footer-tagline">Every frame earns its place.</p>
         <div class="footer-links">
-          <div class="fcol">
+          <div class="footer-col">
             <h4>Services</h4>
             <a href="#services">Content Production</a>
-            <a href="#services">Social Management</a>
+            <a href="#services">Social Media Management</a>
             <a href="#services">Brand Films</a>
             <a href="#services">Event Coverage</a>
           </div>
-          <div class="fcol">
+          <div class="footer-col">
             <h4>Company</h4>
             <a href="#about">About</a>
-            <a href="#work">Our Work</a>
+            <a href="#reel">Our Work</a>
             <a href="#packages">Packages</a>
             <a href="#book">Contact</a>
           </div>
-          <div class="fcol">
+          <div class="footer-col">
             <h4>Connect</h4>
             <a href="https://instagram.com/productionx.in" target="_blank" rel="noopener">Instagram</a>
             <a href="https://wa.me/919391926846" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="mailto:info@productionx.in">Email</a>
+            <a href="mailto:info@productionx.in">Email Us</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Production X Creative · Hyderabad · Vizag · Pan India</p>
-        <a href="tel:+919391926846">+91 93919 26846</a>
+        <p class="footer-copy">© 2026 Production X Creative. Hyderabad · Vizag · Pan India.</p>
+        <p class="footer-phone"><a href="tel:+919391926846">+91 93919 26846</a></p>
       </div>
     </div>
   </footer>
