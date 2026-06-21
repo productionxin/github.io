@@ -22,8 +22,8 @@
 
   <nav class="nav" id="nav">
     <a href="#hero" class="nav-logo">
-  <img src="logo.png" alt="Production X" width="36" height="48" />
-</a>
+      <img src="logo.png" alt="Production X" width="36" height="48" />
+    </a>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
@@ -125,7 +125,7 @@
             <li>Monthly Content Calendar</li>
             <li>Caption Writing &amp; Scheduling</li>
             <li>Instagram &amp; YouTube Growth</li>
-            <li>Google &amp; Meta ad Management</li>
+            <li>Google &amp; Meta Ad Management</li>
             <li>Performance Analytics</li>
             <li>Competitor Analysis</li>
             <li>Paid Ads Integration</li>
@@ -133,10 +133,7 @@
         </div>
       </div>
       <div class="services-note">
-        <svg width="18" height="24" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
-          <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0" opacity="0.5"/>
-          <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C" opacity="0.5"/>
-        </svg>
+        <img src="logo.png" alt="" width="20" height="20" style="object-fit:contain;opacity:0.6;flex-shrink:0;" />
         <p>Great content without strategy is wasted. Strategy without great content is invisible. We deliver both.</p>
       </div>
     </div>
@@ -147,7 +144,7 @@
       <div class="section-header">
         <p class="section-eyebrow">Our Work</p>
         <h2 class="section-title">Cinematic content<br/>that converts.</h2>
-        <p class="section-desc">250+ brand films. 1600+ reels. Premium automotive, hospitality, fashion and lifestyle brands across India & UK.</p>
+        <p class="section-desc">250+ brand films. 1600+ reels. Premium automotive, hospitality, fashion and lifestyle brands across India &amp; UK.</p>
       </div>
     </div>
 
@@ -205,7 +202,7 @@
           </div>
           <div class="pcard-info">
             <span class="pcard-category">Automotive</span>
-            <h3 class="pcard-title">Mercedes-Benz </h3>
+            <h3 class="pcard-title">Mercedes-Benz</h3>
             <p class="pcard-brand">Silver Star, Hyderabad · India's first Maybach showroom</p>
           </div>
         </div>
@@ -300,11 +297,21 @@
       <div class="portfolio-cta">
         <p>Want to see more?</p>
         <a href="https://instagram.com/productionx.in" target="_blank" rel="noopener" class="btn-ghost">
-          View Full Portfolio on Instagram ↗
+          View Full Portfolio on Instagram &#8599;
         </a>
       </div>
     </div>
   </section>
+
+  <!-- COMING SOON OVERLAY -->
+  <div class="coming-soon-overlay" id="comingSoonOverlay">
+    <div class="cs-inner">
+      <img src="logo.png" alt="Production X" width="48" height="48" style="object-fit:contain;margin-bottom:1rem;" />
+      <p class="cs-title">Video Coming Soon</p>
+      <p class="cs-sub">Follow us on Instagram for our latest work</p>
+      <a href="https://instagram.com/productionx.in" target="_blank" rel="noopener" class="cs-link">@productionx.in &#8599;</a>
+    </div>
+  </div>
 
   <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player">
     <div class="modal-backdrop" id="modalBackdrop"></div>
@@ -338,7 +345,6 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-mark">
-          <!-- Replace this SVG with: <img src="kiran.jpg" alt="Kiran Basa, Founder Production X" style="width:100%;max-width:420px;" /> -->
           <svg width="160" height="210" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
             <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0" opacity="0.15"/>
             <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C" opacity="0.25"/>
@@ -347,7 +353,7 @@
         <div class="about-content">
           <p class="section-eyebrow">About</p>
           <h2 class="section-title">We were on your<br/>side of the table.</h2>
-          <p class="about-body">Myself Kiran Basa spent 6 years as a brand-side creative before starting Production X. As Content Producer at Mercedes-Benz across AP &amp; Telangana — and Head of Creative &amp; Marketing at Ujwala Group — he knows exactly what premium brand managers need, what frustrates them about agencies, and what makes content actually perform.</p>
+          <p class="about-body">Kiran Basa spent 6 years as a brand-side creative before starting Production X. As Content Producer at Mercedes-Benz across AP &amp; Telangana — and Head of Creative &amp; Marketing at Ujwala Group — he knows exactly what premium brand managers need, what frustrates them about agencies, and what makes content actually perform.</p>
           <p class="about-body">That perspective is what Production X is built on. We don't just shoot and deliver. We think like the brand, plan like the strategist, and execute like the studio.</p>
           <div class="about-credentials">
             <div class="credential">
@@ -360,7 +366,7 @@
             </div>
             <div class="credential">
               <span class="credential-role">International Production Partner</span>
-              <span class="credential-brand">Working with media agencies in the UK PitStop Group & Three Falcons</span>
+              <span class="credential-brand">PitStop Group &amp; Three Falcons · UK</span>
             </div>
           </div>
         </div>
@@ -384,6 +390,9 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════
+       PACKAGES SECTION — FIXED
+  ════════════════════════════════════════════ -->
   <section class="packages" id="packages">
     <div class="container">
       <div class="section-header">
@@ -392,92 +401,94 @@
         <p class="section-desc">Every package is scoped to your brand and built to deliver results. 50% advance to initiate.</p>
       </div>
 
+      <!-- TABS -->
       <div class="pkg-tabs" id="pkgTabs">
         <button class="pkg-tab active" data-pkg="content">Content &amp; Social</button>
         <button class="pkg-tab" data-pkg="website">Website Development</button>
       </div>
 
+      <!-- CONTENT & SOCIAL PANEL -->
       <div class="pkg-panel active" id="pkg-content">
-      </div>
-      <div class="packages-grid">
-        <div class="package-card">
-          <div class="package-header">
-            <span class="package-name">Foundation</span>
-            <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">75,000</span><span class="price-period">/month</span></div>
+        <div class="packages-grid">
+          <div class="package-card">
+            <div class="package-header">
+              <span class="package-name">Foundation</span>
+              <div class="package-price"><span class="price-currency">&#8377;</span><span class="price-amount">75,000</span><span class="price-period">/month</span></div>
+            </div>
+            <ul class="package-features">
+              <li>8 Cinematic Reels / month</li>
+              <li>8 Premium Static Posts</li>
+              <li>Stories Pack (12)</li>
+              <li>Caption Writing &amp; Scheduling</li>
+              <li>1 Shoot Day / month</li>
+              <li>Social Media Scheduling</li>
+              <li>Instagram Growth Strategy</li>
+              <li>Monthly Analytics Report</li>
+            </ul>
+            <a href="#book" class="btn-package">Book a Call</a>
           </div>
-          <ul class="package-features">
-            <li>8 Cinematic Reels / month</li>
-            <li>8 Premium Static Posts</li>
-            <li>Stories Pack (12)</li>
-            <li>Caption Writing &amp; Scheduling</li>
-            <li>1 Shoot Day / month</li>
-            <li>Social Media Scheduling</li>
-            <li>Instagram Growth Strategy</li>
-            <li>Monthly Analytics Report</li>
-          </ul>
-          <a href="#book" class="btn-package">Book a Call</a>
-        </div>
-        <div class="package-card package-card--featured">
-          <div class="package-badge">Most Popular</div>
-          <div class="package-header">
-            <span class="package-name">Growth</span>
-            <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">1,50,000</span><span class="price-period">/month</span></div>
+          <div class="package-card package-card--featured">
+            <div class="package-badge">Most Popular</div>
+            <div class="package-header">
+              <span class="package-name">Growth</span>
+              <div class="package-price"><span class="price-currency">&#8377;</span><span class="price-amount">1,50,000</span><span class="price-period">/month</span></div>
+            </div>
+            <ul class="package-features">
+              <li>12&#8211;15 Cinematic Reels / month</li>
+              <li>15 Premium Static Posts</li>
+              <li>Stories Pack (20)</li>
+              <li>1 Brand Film (2&#8211;3 min)</li>
+              <li>Full Social Media Management</li>
+              <li>Content Calendar &amp; Strategy</li>
+              <li>Google Business Profile Management</li>
+              <li>Google + Meta Ads (ad spend excl.)</li>
+              <li>2 Full Shoot Days / month</li>
+              <li>Monthly Analytics &amp; Strategy Review</li>
+              <li>Priority WhatsApp support</li>
+            </ul>
+            <a href="#book" class="btn-package btn-package--featured">Book a Call</a>
           </div>
-          <ul class="package-features">
-            <li>12-15 Cinematic Reels / month</li>
-            <li>15 Premium Static Posts</li>
-            <li>Stories Pack (20)</li>
-            <li>1 Brand Film (2-3 min)</li>
-            <li>Full Social Media Management</li>
-            <li>Content Calendar &amp; Strategy</li>
-            <li>Google Business Profile Management</li>
-            <li>Google + Meta Ads (ad spend excl.)</li>
-            <li>2 Full Shoot Days / month</li>
-            <li>Monthly Analytics &amp; Strategy Review</li>
-            <li>Priority WhatsApp support</li>
-          </ul>
-          <a href="#book" class="btn-package btn-package--featured">Book a Call</a>
-        </div>
-        <div class="package-card">
-          <div class="package-header">
-            <span class="package-name">Signature</span>
-            <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">2,75,000</span><span class="price-period">/month</span></div>
+          <div class="package-card">
+            <div class="package-header">
+              <span class="package-name">Signature</span>
+              <div class="package-price"><span class="price-currency">&#8377;</span><span class="price-amount">2,75,000</span><span class="price-period">/month</span></div>
+            </div>
+            <ul class="package-features">
+              <li>20+ Cinematic Reels / month</li>
+              <li>20+ Premium Static Posts</li>
+              <li>Stories Pack (30)</li>
+              <li>2 Brand Films / month (1&#8211;2 min)</li>
+              <li>Full Social Media Management (all platforms)</li>
+              <li>Content Calendar &amp; Strategy</li>
+              <li>Google + Meta Ads Management</li>
+              <li>Event Coverage (1/month)</li>
+              <li>3 Full Shoot Days / month</li>
+              <li>Performance Ads Integration</li>
+              <li>Monthly Analytics &amp; Review</li>
+              <li>Dedicated Account Manager</li>
+            </ul>
+            <a href="#book" class="btn-package">Book a Call</a>
           </div>
-          <ul class="package-features">
-            <li>20+ Cinematic Reels / month</li>
-            <li>20+ Premium Static Posts</li>
-            <li>Stories Pack (30)</li>
-            <li>2 Brand Films / month (1-2 min)</li>
-            <li>Full Social Media Management (all platforms)</li>
-            <li>Content Calendar & Strategy</li>
-            <li>Google + Meta Ads Management</li>
-            <li>Event Coverage (1/month)</li>
-            <li>3 Full Shoot Days / month</li>
-            <li>Event Coverage (1/month)</li>
-            <li>Performance Ads Integration</li>
-            <li>Monthly Analytics &amp; Review</li>
-            <li>Dedicated Account Manager</li>
-          </ul>
-          <a href="#book" class="btn-package">Book a Call</a>
         </div>
-      </div><div class="packages-note-row">
+        <div class="packages-note-row">
           <span class="pkg-note-item">3-month minimum</span>
-          <span class="pkg-note-dot">·</span>
+          <span class="pkg-note-dot">&#183;</span>
           <span class="pkg-note-item">50% advance</span>
-          <span class="pkg-note-dot">·</span>
+          <span class="pkg-note-dot">&#183;</span>
           <span class="pkg-note-item">Ad spend billed separately</span>
         </div>
       </div>
 
+      <!-- WEBSITE DEVELOPMENT PANEL -->
       <div class="pkg-panel" id="pkg-website">
         <div class="website-pkg-intro">
-          <p>We build cinematic, conversion-focused websites for premium brands — fast, mobile-first, delivered on schedule.</p>
+          <p>We build cinematic, conversion-focused websites for premium brands &#8212; fast, mobile-first, and delivered on schedule.</p>
         </div>
         <div class="packages-grid">
           <div class="package-card">
             <div class="package-header">
               <span class="package-name">Starter</span>
-              <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">35,000</span><span class="price-period">one-time</span></div>
+              <div class="package-price"><span class="price-currency">&#8377;</span><span class="price-amount">35,000</span><span class="price-period">one-time</span></div>
             </div>
             <ul class="package-features">
               <li>Single-page website</li>
@@ -494,7 +505,7 @@
             <div class="package-badge">Best Value</div>
             <div class="package-header">
               <span class="package-name">Brand</span>
-              <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">75,000</span><span class="price-period">one-time</span></div>
+              <div class="package-price"><span class="price-currency">&#8377;</span><span class="price-amount">75,000</span><span class="price-period">one-time</span></div>
             </div>
             <ul class="package-features">
               <li>Up to 5 pages</li>
@@ -512,7 +523,7 @@
           <div class="package-card">
             <div class="package-header">
               <span class="package-name">Premium</span>
-              <div class="package-price"><span class="price-currency">₹</span><span class="price-amount">1,50,000</span><span class="price-period">one-time</span></div>
+              <div class="package-price"><span class="price-currency">&#8377;</span><span class="price-amount">1,50,000</span><span class="price-period">one-time</span></div>
             </div>
             <ul class="package-features">
               <li>Up to 8 pages</li>
@@ -532,23 +543,24 @@
           <div class="web-addon-left">
             <span class="web-addon-label">Add-on</span>
             <span class="web-addon-title">Website Maintenance</span>
-            <span class="web-addon-desc">Content updates, performance monitoring &amp; backups.</span>
+            <span class="web-addon-desc">Content updates, performance monitoring &amp; backups. Available for any website we build.</span>
           </div>
           <div class="web-addon-right">
-            <span class="web-addon-price">₹8,000<span>/month</span></span>
+            <span class="web-addon-price">&#8377;8,000<span>/month</span></span>
             <a href="#book" class="btn-package">Add On</a>
           </div>
         </div>
         <div class="packages-note-row">
           <span class="pkg-note-item">All prices + GST</span>
-          <span class="pkg-note-dot">·</span>
+          <span class="pkg-note-dot">&#183;</span>
           <span class="pkg-note-item">50% advance to start</span>
-          <span class="pkg-note-dot">·</span>
+          <span class="pkg-note-dot">&#183;</span>
           <span class="pkg-note-item">Domain &amp; hosting not included</span>
         </div>
       </div>
+
       <div class="packages-custom">
-        <p>Need something specific? <a href="#book">Talk to us</a> — we build custom packages.</p>
+        <p>Need something specific? <a href="#book">Talk to us</a> &#8212; we scope custom packages for unique requirements.</p>
       </div>
     </div>
   </section>
@@ -593,6 +605,7 @@
                 <option value="social-management">Social Media Management</option>
                 <option value="both">Both — Production &amp; Management</option>
                 <option value="brand-film">Brand Film (One-off)</option>
+                <option value="website">Website Development</option>
                 <option value="event-coverage">Event Coverage</option>
                 <option value="custom">Custom Package</option>
               </select>
@@ -602,28 +615,26 @@
               <textarea id="message" name="message" rows="4" placeholder="What does your brand do, what's your goal, and what's holding back your content right now?"></textarea>
             </div>
             <div class="form-group">
-              <label for="budget">Monthly budget range</label>
+              <label for="budget">Budget range</label>
               <select id="budget" name="budget">
                 <option value="" disabled selected>Select budget range</option>
-                <option value="75k">₹75,000 – ₹1,00,000</option>
-                <option value="1l">₹1,00,000 – ₹1,50,000</option>
-                <option value="2l">₹1,50,000 – ₹2,00,000</option>
-                <option value="2l+">₹2,00,000+</option>
+                <option value="35k">Website — &#8377;35,000</option>
+                <option value="75k">&#8377;75,000 – &#8377;1,00,000</option>
+                <option value="1l">&#8377;1,00,000 – &#8377;1,50,000</option>
+                <option value="2l">&#8377;1,50,000 – &#8377;2,00,000</option>
+                <option value="2l+">&#8377;2,00,000+</option>
                 <option value="project">One-off Project</option>
               </select>
             </div>
             <button type="submit" class="btn-submit" id="submitBtn">
               <span class="btn-text">Book My Free Call</span>
-              <span class="btn-icon">→</span>
+              <span class="btn-icon">&#8594;</span>
             </button>
             <p class="form-note">We respond within 24 hours. No spam. No obligations.</p>
           </form>
           <div class="form-success" id="formSuccess">
             <div class="success-mark">
-              <svg width="28" height="36" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0"/>
-                <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C"/>
-              </svg>
+              <img src="logo.png" alt="Production X" width="48" height="48" style="object-fit:contain;" />
             </div>
             <h3>We've received your request.</h3>
             <p>Kiran will reach out within 24 hours to schedule your free discovery call.</p>
@@ -639,10 +650,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="#hero" class="footer-logo">
-            <svg width="24" height="32" viewBox="0 0 54 70" xmlns="http://www.w3.org/2000/svg">
-              <polygon points="2,4 20,4 38,66 20,66" fill="#F5F5F0" opacity="0.8"/>
-              <polygon points="22,4 40,4 22,66 4,66" fill="#C9A84C"/>
-            </svg>
+            <img src="logo.png" alt="Production X" width="32" height="32" style="object-fit:contain;" />
             <div>
               <span class="footer-wordmark">PRODUCTION <em>X</em></span>
               <span class="footer-sub">CREATIVE STUDIO</span>
@@ -657,6 +665,7 @@
             <a href="#services">Social Media Management</a>
             <a href="#services">Brand Films</a>
             <a href="#services">Event Coverage</a>
+            <a href="#packages">Website Development</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
@@ -674,7 +683,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 Production X Creative. Hyderabad · Vizag · Pan India.</p>
+        <p class="footer-copy">&#169; 2026 Production X Creative. Hyderabad &#183; Vizag &#183; Pan India.</p>
         <p class="footer-phone"><a href="tel:+919391926846">+91 93919 26846</a></p>
       </div>
     </div>
