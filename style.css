@@ -1477,3 +1477,83 @@ input, select, textarea, button { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
 }
+/* ── PACKAGE TABS ────────────────────────────── */
+.pkg-tabs {
+  display: flex;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.pkg-tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.875rem 1.75rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+.pkg-tab:hover { color: var(--white); }
+.pkg-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.pkg-panel { display: none; }
+.pkg-panel.active { display: block; }
+.packages-note-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 0;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.pkg-note-item {
+  font-size: 0.7rem;
+  font-weight: 200;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.pkg-note-dot { color: var(--gold); }
+.website-pkg-intro {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 3px solid var(--gold);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.website-pkg-intro p {
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.web-addon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-top: none;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1rem;
+}
+.web-addon-left { display: flex; flex-direction: column; gap: 0.3rem; }
+.web-addon-label { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.web-addon-title { font-size: 1rem; font-weight: 400; color: var(--white); }
+.web-addon-desc { font-size: 0.8rem; font-weight: 200; color: var(--muted); max-width: 480px; line-height: 1.6; }
+.web-addon-right { display: flex; align-items: center; gap: 1.25rem; flex-shrink: 0; }
+.web-addon-price { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--white); white-space: nowrap; }
+.web-addon-price span { font-family: var(--font-body); font-size: 0.8rem; color: var(--muted); }
+@media (max-width: 580px) {
+  .pkg-tab { padding: 0.75rem 1rem; font-size: 0.65rem; }
+  .web-addon { flex-direction: column; align-items: flex-start; }
+}
