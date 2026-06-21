@@ -299,15 +299,16 @@
       });
     });
   // ── PACKAGE TABS ──────────────────────────────
-  document.querySelectorAll('.pkg-tab').forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      var target = this.getAttribute('data-pkg');
-      document.querySelectorAll('.pkg-tab').forEach(function(t) { t.classList.remove('active'); });
-      document.querySelectorAll('.pkg-panel').forEach(function(p) { p.classList.remove('active'); });
-      this.classList.add('active');
-      var panel = document.getElementById('pkg-' + target);
-      if (panel) panel.classList.add('active');
+  var pkgTabBtns = document.querySelectorAll('.pkg-tab');
+  if (pkgTabBtns.length > 0) {
+    pkgTabBtns.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var target = this.getAttribute('data-pkg');
+        document.querySelectorAll('.pkg-tab').forEach(function(t) { t.classList.remove('active'); });
+        document.querySelectorAll('.pkg-panel').forEach(function(p) { p.classList.remove('active'); });
+        this.classList.add('active');
+        var panel = document.getElementById('pkg-' + target);
+        if (panel) panel.classList.add('active');
+      });
     });
-  });
-
-})();
+  }
