@@ -13,8 +13,8 @@
   --gold-dim: #8B6914;
   --gold-pale:#E8D08A;
   --white:    #F5F5F0;
-  --muted:    #AAAAAA;
-  --muted2:   #777777;
+  --muted:    #666666;
+  --muted2:   #444444;
   --border:   #1E1E1E;
   --border2:  #2A2A2A;
 
@@ -1477,13 +1477,126 @@ input, select, textarea, button { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   .hero-video { display: none; }
 }
+
+/* ── REAL LOGO INTEGRATION ───────────────── */
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-logo img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Hero poster placeholder when no image uploaded yet */
+.poster-img {
+  background: var(--surface2);
+}
+
+/* About mark — logo watermark until kiran.jpg is added */
+.about-mark img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ── COMING SOON OVERLAY ─────────────────── */
+.coming-soon-overlay {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  z-index: 998;
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  border-top: 2px solid var(--gold);
+  padding: 1.5rem 2.5rem;
+  text-align: center;
+  min-width: 320px;
+  max-width: 420px;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+}
+
+.coming-soon-overlay.open {
+  transform: translateX(-50%) translateY(0);
+}
+
+.cs-title {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.cs-sub {
+  font-size: 0.75rem;
+  font-weight: 200;
+  color: var(--muted);
+  margin-bottom: 0.875rem;
+  letter-spacing: 0.03em;
+}
+
+.cs-link {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold-dim);
+  padding-bottom: 1px;
+  transition: color 0.2s;
+  text-transform: uppercase;
+}
+
+.cs-link:hover { color: var(--gold-pale); }
+
+/* Portfolio card — coming soon state */
+.pcard-thumb[data-video-id^="YOUR_"] .pcard-play {
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  color: var(--muted);
+}
+
+.pcard-thumb[data-video-id^="YOUR_"]::after {
+  content: 'Coming Soon';
+  position: absolute;
+  top: 0.6rem;
+  left: 0.75rem;
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted2);
+  background: rgba(0,0,0,0.6);
+  padding: 2px 8px;
+  border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+  .coming-soon-overlay {
+    min-width: 280px;
+    bottom: 1rem;
+    padding: 1.25rem 1.75rem;
+  }
+}
+
 /* ── PACKAGE TABS ────────────────────────────── */
 .pkg-tabs {
   display: flex;
+  gap: 0;
   margin-bottom: 2.5rem;
   border-bottom: 1px solid var(--border);
 }
+
 .pkg-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -1495,13 +1608,25 @@ input, select, textarea, button { font-family: inherit; }
   text-transform: uppercase;
   padding: 0.875rem 1.75rem;
   cursor: pointer;
+  white-space: nowrap;
   transition: color 0.2s, border-color 0.2s;
   margin-bottom: -1px;
 }
+
+.pkg-tab svg { opacity: 0.6; transition: opacity 0.2s; }
 .pkg-tab:hover { color: var(--white); }
-.pkg-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.pkg-tab:hover svg { opacity: 1; }
+.pkg-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+.pkg-tab.active svg { opacity: 1; color: var(--gold); }
+
+/* ── PACKAGE PANELS ──────────────────────────── */
 .pkg-panel { display: none; }
 .pkg-panel.active { display: block; }
+
+/* ── PACKAGES NOTE ROW ───────────────────────── */
 .packages-note-row {
   display: flex;
   align-items: center;
@@ -1519,14 +1644,14 @@ input, select, textarea, button { font-family: inherit; }
   color: var(--muted);
   text-transform: uppercase;
 }
-.pkg-note-dot { color: var(--gold); }
+.pkg-note-dot { color: var(--gold); font-size: 0.9rem; }
+
+/* ── WEBSITE PKG INTRO ───────────────────────── */
 .website-pkg-intro {
   margin-bottom: 2rem;
   padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
   border-left: 3px solid var(--gold);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  border-right: 1px solid var(--border);
 }
 .website-pkg-intro p {
   font-size: 0.9rem;
@@ -1534,26 +1659,88 @@ input, select, textarea, button { font-family: inherit; }
   color: var(--muted);
   line-height: 1.8;
 }
+
+/* ── WEB ADDON CARD ──────────────────────────── */
 .web-addon {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-top: 1.5px;
   background: var(--surface2);
   border: 1px solid var(--border);
   border-top: none;
   padding: 1.5rem 2rem;
-  margin-bottom: 1rem;
 }
-.web-addon-left { display: flex; flex-direction: column; gap: 0.3rem; }
-.web-addon-label { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
-.web-addon-title { font-size: 1rem; font-weight: 400; color: var(--white); }
-.web-addon-desc { font-size: 0.8rem; font-weight: 200; color: var(--muted); max-width: 480px; line-height: 1.6; }
-.web-addon-right { display: flex; align-items: center; gap: 1.25rem; flex-shrink: 0; }
-.web-addon-price { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--white); white-space: nowrap; }
-.web-addon-price span { font-family: var(--font-body); font-size: 0.8rem; color: var(--muted); }
+.web-addon-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.web-addon-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.web-addon-title {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+.web-addon-desc {
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: var(--muted);
+  max-width: 480px;
+  line-height: 1.6;
+}
+.web-addon-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+.web-addon-price {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--white);
+  white-space: nowrap;
+}
+.web-addon-price span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: var(--muted);
+  margin-left: 2px;
+}
+
 @media (max-width: 580px) {
   .pkg-tab { padding: 0.75rem 1rem; font-size: 0.65rem; }
   .web-addon { flex-direction: column; align-items: flex-start; }
+  .web-addon-right { width: 100%; justify-content: space-between; }
+}
+
+/* ── 4-COLUMN WEBSITE GRID ───────────────────── */
+.web-four-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+.package-type-tag {
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  margin-top: -0.5rem;
+  opacity: 0.8;
+}
+@media (max-width: 1100px) {
+  .web-four-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .web-four-grid { grid-template-columns: 1fr; }
 }
