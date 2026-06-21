@@ -298,7 +298,8 @@
         }
       });
     });
-});
+
+     });
 
   // ── PACKAGE TABS ──────────────────────────────
   document.querySelectorAll('.pkg-tab').forEach(function(tab) {
@@ -313,3 +314,4 @@
   });
 
 })();
+});
