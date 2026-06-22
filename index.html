@@ -34,8 +34,8 @@
       --gold:    #C9A84C;
       --gold-dk: #8B6914;
       --white:   #F5F5F0;
-      --grey:    #888888;
-      --grey-lt: #444444;
+      --grey:    #AAAAAA;
+      --grey-lt: #777777;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans:  'Montserrat', sans-serif;
     }
@@ -174,7 +174,7 @@
 
     .hero-sub {
       font-size: 14px; font-weight: 200; letter-spacing: 0.06em;
-      color: var(--grey); line-height: 1.8; margin-bottom: 48px;
+      color: #BBBBBB; line-height: 1.8; margin-bottom: 48px;
       max-width: 520px; opacity: 0;
     }
 
@@ -289,7 +289,7 @@
     }
     .section-title em { font-style: italic; color: var(--gold); }
     .section-sub {
-      font-size: 14px; font-weight: 200; color: var(--grey);
+      font-size: 14px; font-weight: 200; color: #BBBBBB;
       line-height: 1.9; max-width: 560px; margin-bottom: 64px;
     }
     .gold-rule {
@@ -357,7 +357,7 @@
       padding-top: 24px;
     }
     .service-list li {
-      font-size: 11px; font-weight: 200; color: var(--grey-lt);
+      font-size: 11px; font-weight: 300; color: #999999;
       letter-spacing: 0.05em; padding: 6px 0;
       border-bottom: 0.5px solid var(--border);
       transition: color 0.3s, padding-left 0.3s;
@@ -608,7 +608,7 @@
       margin-bottom: 8px;
     }
     .cs-card-desc {
-      font-size: 12px; font-weight: 200; color: var(--grey);
+      font-size: 12px; font-weight: 200; color: #BBBBBB;
       line-height: 1.7;
     }
     .cs-card-check {
@@ -635,7 +635,7 @@
     .about-left { }
     .about-right { }
     .about-body {
-      font-size: 15px; font-weight: 200; color: var(--grey);
+      font-size: 15px; font-weight: 200; color: #CCCCCC;
       line-height: 2; margin-bottom: 48px;
     }
     .about-body p { margin-bottom: 20px; }
@@ -661,7 +661,7 @@
       margin-bottom: 4px; display: block;
     }
     .credential-sub {
-      font-size: 11px; font-weight: 200; color: var(--grey-lt);
+      font-size: 11px; font-weight: 200; color: #AAAAAA;
       letter-spacing: 0.05em; display: block;
     }
 
@@ -703,7 +703,7 @@
       margin-bottom: 12px;
     }
     .process-desc {
-      font-size: 12px; font-weight: 200; color: var(--grey);
+      font-size: 12px; font-weight: 200; color: #BBBBBB;
       line-height: 1.7;
     }
 
@@ -760,7 +760,7 @@
     }
     .pkg-list { list-style: none; margin-bottom: 40px; }
     .pkg-list li {
-      font-size: 12px; font-weight: 200; color: var(--grey);
+      font-size: 12px; font-weight: 200; color: #AAAAAA;
       padding: 8px 0; border-bottom: 0.5px solid var(--border);
       display: flex; align-items: center; gap: 10px;
     }
@@ -829,7 +829,7 @@
     }
     .web-list { list-style: none; margin-bottom: 28px; }
     .web-list li {
-      font-size: 11px; font-weight: 200; color: var(--grey);
+      font-size: 11px; font-weight: 200; color: #AAAAAA;
       padding: 5px 0; border-bottom: 0.5px solid var(--border);
       display: flex; gap: 8px; align-items: center;
     }
@@ -889,7 +889,7 @@
     .book-contact-icon { width: 16px; height: 16px; flex-shrink: 0; }
     .book-contact-icon svg { width: 100%; height: 100%; }
     .book-contact-text {
-      font-size: 13px; font-weight: 200; color: var(--white);
+      font-size: 13px; font-weight: 300; color: var(--white);
       letter-spacing: 0.04em;
     }
 
@@ -975,7 +975,7 @@
     .footer-col-links { list-style: none; }
     .footer-col-links li { margin-bottom: 10px; }
     .footer-col-links a {
-      font-size: 12px; font-weight: 200; color: var(--grey);
+      font-size: 12px; font-weight: 200; color: #AAAAAA;
       text-decoration: none; letter-spacing: 0.04em;
       transition: color 0.3s;
     }
@@ -1059,6 +1059,55 @@
       #wa-float { bottom: 24px; right: 24px; }
       .form-row-2 { grid-template-columns: 1fr; }
     }
+
+
+    /* ── VIDEO MODAL ────────────────────────────────────── */
+    .video-modal {
+      display: none; position: fixed; inset: 0; z-index: 9990;
+      align-items: center; justify-content: center;
+    }
+    .video-modal.open { display: flex; }
+    .modal-backdrop {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.92);
+      cursor: pointer;
+    }
+    .modal-content {
+      position: relative; z-index: 1;
+      width: 90vw; max-width: 1000px;
+      background: var(--dark);
+    }
+    .modal-close {
+      position: absolute; top: -44px; right: 0;
+      background: none; border: none; color: var(--white);
+      cursor: pointer; padding: 8px;
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-sans); font-size: 11px;
+      font-weight: 200; letter-spacing: 0.1em;
+      text-transform: uppercase; opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .modal-close:hover { opacity: 1; }
+    .modal-player {
+      position: relative; padding-bottom: 56.25%;
+      height: 0; overflow: hidden;
+    }
+    .modal-player iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    /* Showreel embed */
+    .reel-embed {
+      position: relative; padding-bottom: 42%;
+      height: 0; overflow: hidden; display: none;
+    }
+    .reel-embed iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: none;
+    }
+    /* Portfolio card cursor */
+    .portfolio-item { cursor: pointer; }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -1279,7 +1328,7 @@
   </div>
 
   <!-- Showreel -->
-  <div class="showreel-wrap reveal">
+  <div class="showreel-wrap reveal" id="showreelWrap" data-video-id="JSwBhWSN5tE">
     <img src="reel-poster.jpg" alt="Production X Showreel 2026"/>
     <div class="showreel-overlay">
       <div class="play-btn">
@@ -1292,7 +1341,7 @@
   <!-- Grid -->
   <div class="portfolio-grid">
     <div class="portfolio-item reveal-scale" data-cat="automotive">
-      <img src="thumb-mercedes.jpg" alt="Mercedes-Benz Maybach Delivery Reel"/>
+      <img src="thumb-mercedes.jpg" data-video-id="PmRJ8ydIvGw" alt="Mercedes-Benz Maybach Delivery Reel"/>
       <div class="portfolio-item-overlay">
         <span class="portfolio-item-tag">Automotive</span>
         <div class="portfolio-item-play">
@@ -1305,7 +1354,7 @@
       </div>
     </div>
     <div class="portfolio-item reveal-scale" data-cat="automotive">
-      <img src="thumb-bmw.jpg" alt="BMW Showroom Content"/>
+      <img src="thumb-bmw.jpg" data-video-id="ZrH5rOXm8io" alt="BMW Showroom Content"/>
       <div class="portfolio-item-overlay">
         <span class="portfolio-item-tag">Automotive</span>
         <div class="portfolio-item-play">
@@ -1318,7 +1367,7 @@
       </div>
     </div>
     <div class="portfolio-item reveal-scale" data-cat="hospitality">
-      <img src="thumb-hotel.jpg" alt="Hotel Brand Film"/>
+      <img src="thumb-hotel.jpg" data-video-id="cdKx1Zv3YKs" alt="Hotel Brand Film"/>
       <div class="portfolio-item-overlay">
         <span class="portfolio-item-tag">Hospitality</span>
         <div class="portfolio-item-play">
@@ -1331,7 +1380,7 @@
       </div>
     </div>
     <div class="portfolio-item reveal-scale" data-cat="hospitality">
-      <img src="thumb-cafe.jpg" alt="Premium Cafe Ambiance Reel"/>
+      <img src="thumb-cafe.jpg" data-video-id="Xub8As6vhxY" alt="Premium Cafe Ambiance Reel"/>
       <div class="portfolio-item-overlay">
         <span class="portfolio-item-tag">Hospitality</span>
         <div class="portfolio-item-play">
@@ -1344,7 +1393,7 @@
       </div>
     </div>
     <div class="portfolio-item reveal-scale" data-cat="fashion">
-      <img src="thumb-fashion.jpg" alt="1UJ Fashion Brand Film"/>
+      <img src="thumb-fashion.jpg" data-video-id="tx80zK9QKDU" alt="1UJ Fashion Brand Film"/>
       <div class="portfolio-item-overlay">
         <span class="portfolio-item-tag">Fashion</span>
         <div class="portfolio-item-play">
@@ -1357,7 +1406,7 @@
       </div>
     </div>
     <div class="portfolio-item reveal-scale" data-cat="corporate">
-      <img src="thumb-event.jpg" alt="Brand Launch Event Coverage"/>
+      <img src="thumb-event.jpg" data-video-id="G1N693k3PJA" alt="Brand Launch Event Coverage"/>
       <div class="portfolio-item-overlay">
         <span class="portfolio-item-tag">Corporate</span>
         <div class="portfolio-item-play">
@@ -1411,15 +1460,15 @@
     </div>
     <div class="brand-tree-branches">
       <div class="brand-branch">
-        <span class="brand-branch-name">1UJ Fashion</span>
-        <span class="brand-branch-type">Fashion &amp; Apparel</span>
+        <span class="brand-branch-name"><a href="https://1ujfashion.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);">1UJ Fashion</a></span>
+        <span class="brand-branch-type">Fashion &amp; Apparel · 1ujfashion.com</span>
       </div>
       <div class="brand-branch">
-        <span class="brand-branch-name">1UJ Lifestyle</span>
+        <span class="brand-branch-name">1UJ Lifestyle &amp; Luxury</span>
         <span class="brand-branch-type">Lifestyle &amp; Luxury</span>
       </div>
       <div class="brand-branch">
-        <span class="brand-branch-name">Smart Living OneUJ</span>
+        <span class="brand-branch-name"><a href="https://oneuj.com" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.3);">Smart Living OneUJ</a></span>
         <span class="brand-branch-type">E-Commerce · oneuj.com</span>
       </div>
     </div>
@@ -1791,7 +1840,7 @@
       <h2 class="section-title reveal">Let's build something<br><em>your audience will<br/>remember.</em></h2>
       <p class="section-sub reveal">Fill in your details and we'll get back to you within 24 hours to schedule a free 30-minute discovery call.</p>
       <div class="book-contact">
-        <a href="https://wa.me/919391926846" class="book-contact-item reveal-left" target="_blank">
+        <a href="https://wa.me/919391926846?text=Hi%20Kiran%2C%20I%20came%20across%20Production%20X%20and%20I%27m%20interested%20in%20discussing%20content%20production%20for%20my%20brand.%20Could%20we%20schedule%20a%20call%3F" class="book-contact-item reveal-left" target="_blank">
           <span class="book-contact-icon">
             <svg viewBox="0 0 16 16" fill="#C9A84C"><path d="M8 0C3.6 0 0 3.6 0 8c0 1.4.4 2.8 1 4L0 16l4.2-1.1C5.3 15.6 6.6 16 8 16c4.4 0 8-3.6 8-8s-3.6-8-8-8zm3.9 11.3c-.2.5-1 1-1.4 1-.4 0-.8.1-2.5-.5-1.7-.7-3.3-3-3.4-3.2-.1-.1-.9-1.2-.9-2.3s.7-1.6.9-1.8c.2-.2.5-.3.7-.3h.4c.2 0 .4.1.6.5l.8 1.8c.1.2.1.4 0 .6l-.4.7c-.1.1-.1.3 0 .4.4.7.9 1.3 1.5 1.8.5.4 1.1.7 1.7.8.2 0 .3 0 .4-.2l.5-.7c.1-.2.3-.2.5-.1l1.8.8c.2.1.3.2.3.4v.3z"/></svg>
           </span>
@@ -1905,12 +1954,32 @@
 </footer>
 
 <!-- ── FLOATING WHATSAPP ──────────────────────────────── -->
-<a href="https://wa.me/919391926846" id="wa-float" target="_blank" aria-label="Chat on WhatsApp">
+<a href="https://wa.me/919391926846?text=Hi%20Kiran%2C%20I%20came%20across%20Production%20X%20and%20I%27m%20interested%20in%20discussing%20content%20production%20for%20my%20brand.%20Could%20we%20schedule%20a%20call%3F" id="wa-float" target="_blank" aria-label="Chat on WhatsApp">
   <span class="wa-tooltip">Chat with us</span>
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.3-1.6C8.2 23.4 10 24 12 24c6.6 0 12-5.4 12-12S18.6 0 12 0zm6 16.9c-.3.8-1.5 1.5-2.1 1.5-.6.1-1.2.2-3.8-.8-2.6-1-4.9-4.5-5.1-4.7-.2-.2-1.4-1.8-1.4-3.4s1-2.4 1.4-2.7c.4-.3.7-.4 1-.4h.6c.3 0 .6.1.9.8l1.2 2.7c.2.3.1.6-.1.9l-.6 1c-.2.2-.2.4 0 .6.6 1 1.4 2 2.3 2.7.8.6 1.7 1 2.6 1.2.3.1.5 0 .7-.2l.8-1c.2-.3.5-.4.8-.2l2.7 1.3c.3.1.5.3.5.6v.5l-.4-.5z"/>
   </svg>
 </a>
+
+
+<!-- ── VIDEO MODAL ─────────────────────────────────────── -->
+<div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Close video">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+        <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Close
+    </button>
+    <div class="modal-player">
+      <iframe id="modalIframe" src="" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen title="Production X — Video"></iframe>
+    </div>
+  </div>
+</div>
 
 <!-- ── SCRIPTS ────────────────────────────────────────── -->
 <script>
@@ -2061,6 +2130,50 @@ window.addEventListener('scroll', () => {
 })();
 
 // ── SCROLL REVEALS ────────────────────────────────────
+
+// ── VIDEO MODAL SYSTEM ────────────────────────────────
+(function() {
+  const modal   = document.getElementById('videoModal');
+  const iframe  = document.getElementById('modalIframe');
+  const close   = document.getElementById('modalClose');
+  const backdrop= document.getElementById('modalBackdrop');
+
+  function openModal(videoId) {
+    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&color=white';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    gsap.from('.modal-content', { scale: 0.92, opacity: 0, duration: 0.4, ease: 'power3.out' });
+  }
+
+  function closeModal() {
+    iframe.src = '';
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  close.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // Portfolio thumbnails
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    const img = item.querySelector('img[data-video-id]');
+    if (!img) return;
+    const vid = img.getAttribute('data-video-id');
+    item.style.cursor = 'pointer';
+    item.addEventListener('click', () => openModal(vid));
+  });
+
+  // Showreel
+  const showreelWrap = document.getElementById('showreelWrap');
+  if (showreelWrap) {
+    showreelWrap.style.cursor = 'pointer';
+    showreelWrap.addEventListener('click', () => {
+      openModal(showreelWrap.getAttribute('data-video-id'));
+    });
+  }
+})();
+
 gsap.utils.toArray('.reveal').forEach(el => {
   gsap.fromTo(el,
     { opacity: 0, y: 36 },
