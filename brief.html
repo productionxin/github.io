@@ -7,725 +7,209 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --black: #080808;
-    --gold: #C9A84C;
-    --offwhite: #F5F5F0;
-    --warmlight: #F2F0EC;
-    --midgray: #1a1a1a;
-    --lightgray: #2a2a2a;
-    --textgray: #888;
-    --border: rgba(201,168,76,0.25);
+    --black: #080808; --gold: #C9A84C; --offwhite: #F5F5F0;
+    --midgray: #1a1a1a; --textgray: #888; --border: rgba(201,168,76,0.25);
   }
+  body { background: var(--black); color: var(--offwhite); font-family: 'Montserrat', sans-serif; font-size: 14px; line-height: 1.6; min-height: 100vh; }
 
-  body {
-    background: var(--black);
-    color: var(--offwhite);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    min-height: 100vh;
-  }
+  /* INVALID STATE */
+  .invalid-screen { display: none; text-align: center; padding: 120px 40px; max-width: 500px; margin: 0 auto; }
+  .invalid-screen.active { display: block; }
+  .invalid-icon { font-size: 40px; margin-bottom: 24px; }
+  .invalid-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--offwhite); margin-bottom: 12px; }
+  .invalid-sub { font-size: 13px; color: var(--textgray); line-height: 1.8; margin-bottom: 28px; }
+  .invalid-contact { background: var(--midgray); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; font-size: 12px; color: var(--textgray); }
+  .invalid-contact a { color: var(--gold); text-decoration: none; }
 
-  /* HEADER */
-  .header {
-    background: var(--black);
-    border-bottom: 1px solid var(--border);
-    padding: 28px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    backdrop-filter: blur(10px);
-  }
-
-  .logo-mark {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .cut-mark {
-    width: 36px;
-    height: 36px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cut-mark svg { width: 36px; height: 36px; }
-
-  .logo-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--offwhite);
-    letter-spacing: 0.08em;
-  }
-
+  .header { background: var(--black); border-bottom: 1px solid var(--border); padding: 28px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+  .logo-mark { display: flex; align-items: center; gap: 12px; }
+  .logo-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--offwhite); letter-spacing: 0.08em; }
   .logo-text span { color: var(--gold); }
-
-  .header-tag {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    color: var(--textgray);
-    text-transform: uppercase;
-  }
-
-  /* HERO */
-  .hero {
-    padding: 64px 40px 48px;
-    max-width: 860px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .hero-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-
-  .hero-eyebrow::before, .hero-eyebrow::after {
-    content: '—';
-    margin: 0 12px;
-    opacity: 0.4;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(32px, 5vw, 52px);
-    font-weight: 600;
-    line-height: 1.15;
-    color: var(--offwhite);
-    margin-bottom: 20px;
-  }
-
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-sub {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--textgray);
-    line-height: 1.8;
-    max-width: 540px;
-    margin: 0 auto 32px;
-  }
-
-  .client-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border: 1px solid var(--border);
-    border-radius: 40px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--textgray);
-  }
-
-  .client-badge span {
-    color: var(--gold);
-    font-weight: 600;
-  }
-
-  .client-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--gold);
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
-
-  /* PROGRESS */
-  .progress-bar {
-    max-width: 860px;
-    margin: 0 auto 48px;
-    padding: 0 40px;
-  }
-
-  .progress-steps {
-    display: flex;
-    align-items: center;
-    gap: 0;
-  }
-
-  .step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-  }
-
-  .step-circle {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--textgray);
-    transition: all 0.3s;
-    background: var(--black);
-    position: relative;
-    z-index: 2;
-  }
-
-  .step.active .step-circle {
-    border-color: var(--gold);
-    color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
-  }
-
-  .step.done .step-circle {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--black);
-  }
-
-  .step-label {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--textgray);
-    text-align: center;
-    white-space: nowrap;
-  }
-
+  .header-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; color: var(--textgray); text-transform: uppercase; }
+  .hero { padding: 64px 40px 48px; max-width: 860px; margin: 0 auto; text-align: center; }
+  .hero-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
+  .hero-eyebrow::before, .hero-eyebrow::after { content: '—'; margin: 0 12px; opacity: 0.4; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 600; line-height: 1.15; color: var(--offwhite); margin-bottom: 20px; }
+  .hero-title em { font-style: italic; color: var(--gold); }
+  .hero-sub { font-size: 13px; font-weight: 300; color: var(--textgray); line-height: 1.8; max-width: 540px; margin: 0 auto 32px; }
+  .client-badge { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; border: 1px solid var(--border); border-radius: 40px; font-size: 12px; font-weight: 500; color: var(--textgray); }
+  .client-badge span { color: var(--gold); font-weight: 600; }
+  .client-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  .progress-bar { max-width: 860px; margin: 0 auto 48px; padding: 0 40px; }
+  .progress-steps { display: flex; align-items: center; }
+  .step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; }
+  .step-circle { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; color: var(--textgray); transition: all 0.3s; background: var(--black); position: relative; z-index: 2; }
+  .step.active .step-circle { border-color: var(--gold); color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+  .step.done .step-circle { background: var(--gold); border-color: var(--gold); color: var(--black); }
+  .step-label { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--textgray); text-align: center; white-space: nowrap; }
   .step.active .step-label { color: var(--gold); }
-
-  .step-line {
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-    margin-bottom: 24px;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* FORM SECTIONS */
-  .form-container {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 0 40px 80px;
-  }
-
-  .section {
-    display: none;
-    animation: fadeIn 0.4s ease;
-  }
-
+  .step-line { flex: 1; height: 1px; background: var(--border); margin-bottom: 24px; }
+  .form-container { max-width: 860px; margin: 0 auto; padding: 0 40px 80px; }
+  .section { display: none; animation: fadeIn 0.4s ease; }
   .section.active { display: block; }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .section-header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+  .section-number { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 10px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--offwhite); margin-bottom: 8px; }
+  .section-desc { font-size: 12px; color: var(--textgray); font-weight: 300; }
+  .field-group { margin-bottom: 32px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+  label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--textgray); margin-bottom: 10px; }
+  label span { color: var(--gold); margin-left: 3px; }
+  .hint { font-size: 11px; font-weight: 300; color: #555; margin-top: -6px; margin-bottom: 10px; letter-spacing: 0; text-transform: none; }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea, select {
+    width: 100%; background: var(--midgray); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; color: var(--offwhite);
+    font-family: 'Montserrat', sans-serif; font-size: 13px; padding: 14px 16px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none;
   }
-
-  .section-header {
-    margin-bottom: 40px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-number {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 600;
-    color: var(--offwhite);
-    margin-bottom: 8px;
-  }
-
-  .section-desc {
-    font-size: 12px;
-    color: var(--textgray);
-    font-weight: 300;
-  }
-
-  /* FORM FIELDS */
-  .field-group {
-    margin-bottom: 32px;
-  }
-
-  .field-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 32px;
-  }
-
-  label {
-    display: block;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--textgray);
-    margin-bottom: 10px;
-  }
-
-  label span {
-    color: var(--gold);
-    margin-left: 3px;
-  }
-
-  .hint {
-    font-size: 11px;
-    font-weight: 300;
-    color: #555;
-    margin-top: -6px;
-    margin-bottom: 10px;
-    letter-spacing: 0;
-    text-transform: none;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="tel"],
-  input[type="url"],
-  input[type="number"],
-  textarea,
-  select {
-    width: 100%;
-    background: var(--midgray);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 4px;
-    color: var(--offwhite);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    padding: 14px 16px;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    appearance: none;
-  }
-
-  input:focus, textarea:focus, select:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.08);
-  }
-
+  input:focus, textarea:focus, select:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.08); }
   textarea { resize: vertical; min-height: 100px; }
-
-  select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    padding-right: 40px;
-    cursor: pointer;
-  }
-
+  select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; cursor: pointer; }
   select option { background: var(--midgray); }
-
-  /* RADIO / CHECKBOX GROUPS */
-  .options-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-  }
-
-  .options-grid.two-col {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .option-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 14px;
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
-    background: var(--midgray);
-  }
-
-  .option-item:hover {
-    border-color: rgba(201,168,76,0.3);
-    background: rgba(201,168,76,0.04);
-  }
-
-  .option-item input[type="radio"],
-  .option-item input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--gold);
-    cursor: pointer;
-    flex-shrink: 0;
-  }
-
-  .option-item label {
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--offwhite);
-    cursor: pointer;
-    margin: 0;
-  }
-
-  .option-item:has(input:checked) {
-    border-color: var(--gold);
-    background: rgba(201,168,76,0.06);
-  }
-
-  /* RATING SCALE */
-  .rating-scale {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .rating-scale label {
-    font-size: 11px;
-    color: var(--textgray);
-    text-transform: none;
-    letter-spacing: 0;
-    margin: 0;
-  }
-
-  .scale-buttons {
-    display: flex;
-    gap: 6px;
-    flex: 1;
-  }
-
-  .scale-btn {
-    flex: 1;
-    padding: 10px 4px;
-    background: var(--midgray);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 4px;
-    color: var(--textgray);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: center;
-  }
-
+  .options-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .options-grid.two-col { grid-template-columns: 1fr 1fr; }
+  .option-item { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; cursor: pointer; transition: all 0.2s; background: var(--midgray); }
+  .option-item:hover { border-color: rgba(201,168,76,0.3); }
+  .option-item input[type="radio"], .option-item input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); cursor: pointer; flex-shrink: 0; }
+  .option-item label { font-size: 12px; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--offwhite); cursor: pointer; margin: 0; }
+  .option-item:has(input:checked) { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+  .scale-buttons { display: flex; gap: 6px; }
+  .scale-btn { flex: 1; padding: 10px 4px; background: var(--midgray); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; color: var(--textgray); font-family: 'Montserrat', sans-serif; font-size: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; text-align: center; }
   .scale-btn:hover { border-color: var(--gold); color: var(--gold); }
   .scale-btn.selected { background: var(--gold); border-color: var(--gold); color: var(--black); }
-
-  /* DIVIDER */
-  .field-divider {
-    border: none;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    margin: 36px 0;
-  }
-
-  /* INFO BOX */
-  .info-box {
-    background: rgba(201,168,76,0.06);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 16px 20px;
-    margin-bottom: 28px;
-    font-size: 12px;
-    color: #aaa;
-    line-height: 1.7;
-  }
-
+  .field-divider { border: none; border-top: 1px solid rgba(255,255,255,0.05); margin: 36px 0; }
+  .info-box { background: rgba(201,168,76,0.06); border: 1px solid var(--border); border-radius: 6px; padding: 16px 20px; margin-bottom: 28px; font-size: 12px; color: #aaa; line-height: 1.7; }
   .info-box strong { color: var(--gold); }
-
-  /* NAVIGATION */
-  .nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 28px;
-    border-radius: 3px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.2s;
-    border: none;
-    text-decoration: none;
-  }
-
-  .btn-primary {
-    background: var(--gold);
-    color: var(--black);
-  }
-
-  .btn-primary:hover {
-    background: #d4b05a;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(201,168,76,0.25);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--textgray);
-    border: 1px solid rgba(255,255,255,0.1);
-  }
-
-  .btn-secondary:hover {
-    border-color: rgba(255,255,255,0.2);
-    color: var(--offwhite);
-  }
-
-  .btn-icon { font-size: 14px; }
-
-  /* SUCCESS */
-  .success-screen {
-    display: none;
-    text-align: center;
-    padding: 80px 40px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
+  .nav-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 3px; font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; border: none; }
+  .btn-primary { background: var(--gold); color: var(--black); }
+  .btn-primary:hover { background: #d4b05a; transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.25); }
+  .btn-secondary { background: transparent; color: var(--textgray); border: 1px solid rgba(255,255,255,0.1); }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.2); color: var(--offwhite); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+  .success-screen { display: none; text-align: center; padding: 80px 40px; max-width: 600px; margin: 0 auto; }
   .success-screen.active { display: block; }
-
-  .success-icon {
-    width: 72px;
-    height: 72px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 32px;
-    font-size: 28px;
-    color: var(--gold);
-  }
-
-  .success-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 42px;
-    font-weight: 600;
-    color: var(--offwhite);
-    margin-bottom: 16px;
-  }
-
-  .success-sub {
-    font-size: 13px;
-    color: var(--textgray);
-    line-height: 1.8;
-    margin-bottom: 32px;
-  }
-
-  .success-detail {
-    background: var(--midgray);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 20px;
-    text-align: left;
-    font-size: 12px;
-    color: var(--textgray);
-    line-height: 1.9;
-  }
-
+  .success-icon { width: 72px; height: 72px; border: 1px solid var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; font-size: 28px; color: var(--gold); }
+  .success-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 600; color: var(--offwhite); margin-bottom: 16px; }
+  .success-sub { font-size: 13px; color: var(--textgray); line-height: 1.8; margin-bottom: 32px; }
+  .success-detail { background: var(--midgray); border: 1px solid var(--border); border-radius: 6px; padding: 20px; text-align: left; font-size: 12px; color: var(--textgray); line-height: 1.9; }
   .success-detail strong { color: var(--gold); }
-
-  /* FOOTER */
-  .form-footer {
-    text-align: center;
-    padding: 24px 40px;
-    border-top: 1px solid var(--border);
-    font-size: 11px;
-    color: #444;
-    letter-spacing: 0.05em;
-  }
-
+  .error-msg { background: rgba(255,80,80,0.08); border: 1px solid rgba(255,80,80,0.3); border-radius: 6px; padding: 14px 18px; margin-top: 20px; font-size: 12px; color: #ff8080; display: none; }
+  .form-footer { text-align: center; padding: 24px 40px; border-top: 1px solid var(--border); font-size: 11px; color: #444; }
   .form-footer a { color: var(--gold); text-decoration: none; }
-
-  /* RESPONSIVE */
   @media (max-width: 600px) {
-    .header { padding: 20px 20px; }
-    .hero { padding: 40px 20px 32px; }
+    .header { padding: 20px; } .hero { padding: 40px 20px 32px; }
     .progress-bar, .form-container { padding: 0 20px 60px; }
     .field-row { grid-template-columns: 1fr; gap: 0; }
-    .options-grid { grid-template-columns: 1fr; }
-    .options-grid.two-col { grid-template-columns: 1fr; }
-    .section-title { font-size: 26px; }
-    .step-label { display: none; }
-  }
-
-  /* CHAR COUNTER */
-  .char-counter {
-    text-align: right;
-    font-size: 10px;
-    color: #444;
-    margin-top: 4px;
+    .options-grid, .options-grid.two-col { grid-template-columns: 1fr; }
+    .section-title { font-size: 26px; } .step-label { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- INVALID LINK SCREEN -->
+<div class="invalid-screen" id="invalid-screen">
+  <div class="invalid-icon">✦</div>
+  <h2 class="invalid-title">Invalid Link</h2>
+  <p class="invalid-sub">This discovery form link appears to be invalid or incomplete. Please use the personalised link sent to you by the Production X team.</p>
+  <div class="invalid-contact">
+    Need help? Contact Kiran directly:<br><br>
+    <a href="https://wa.me/919391926846">WhatsApp: +91 93919 26846</a><br>
+    <a href="mailto:info@productionx.in">info@productionx.in</a>
+  </div>
+</div>
+
+<!-- MAIN FORM (hidden until client param validated) -->
+<div id="main-content" style="display:none;">
+
 <header class="header">
   <div class="logo-mark">
-    <div class="cut-mark">
-      <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <polygon points="4,8 14,8 10,28 0,28" fill="#F5F5F0"/>
-        <polygon points="22,8 36,8 32,28 18,28" fill="#C9A84C"/>
-      </svg>
-    </div>
+    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="4,8 14,8 10,28 0,28" fill="#F5F5F0"/>
+      <polygon points="22,8 36,8 32,28 18,28" fill="#C9A84C"/>
+    </svg>
     <div class="logo-text">PRODUCTION <span>X</span></div>
   </div>
   <div class="header-tag">Client Discovery Form</div>
 </header>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Confidential</div>
-  <h1 class="hero-title">Tell us about<br><em>Utsav Stone Art</em></h1>
+  <h1 class="hero-title">Tell us about<br><em id="hero-client-name"></em></h1>
   <p class="hero-sub">This form helps us build a precise strategy — not a template. Every answer shapes your website, content plan, and growth roadmap. Takes about 10–12 minutes.</p>
   <div class="client-badge">
     <div class="client-dot"></div>
-    <span>Utsav Stone Art</span> · Exclusive Brief · June 2026
+    <span id="badge-client-name"></span> · Exclusive Brief · June 2026
   </div>
 </div>
 
-<!-- PROGRESS -->
 <div class="progress-bar">
   <div class="progress-steps">
-    <div class="step active" id="step-1">
-      <div class="step-circle">1</div>
-      <div class="step-label">Business</div>
-    </div>
+    <div class="step active" id="step-1"><div class="step-circle">1</div><div class="step-label">Business</div></div>
     <div class="step-line"></div>
-    <div class="step" id="step-2">
-      <div class="step-circle">2</div>
-      <div class="step-label">Products</div>
-    </div>
+    <div class="step" id="step-2"><div class="step-circle">2</div><div class="step-label">Products</div></div>
     <div class="step-line"></div>
-    <div class="step" id="step-3">
-      <div class="step-circle">3</div>
-      <div class="step-label">Website</div>
-    </div>
+    <div class="step" id="step-3"><div class="step-circle">3</div><div class="step-label">Website</div></div>
     <div class="step-line"></div>
-    <div class="step" id="step-4">
-      <div class="step-circle">4</div>
-      <div class="step-label">Content</div>
-    </div>
+    <div class="step" id="step-4"><div class="step-circle">4</div><div class="step-label">Content</div></div>
     <div class="step-line"></div>
-    <div class="step" id="step-5">
-      <div class="step-circle">5</div>
-      <div class="step-label">Goals</div>
-    </div>
+    <div class="step" id="step-5"><div class="step-circle">5</div><div class="step-label">Goals</div></div>
   </div>
 </div>
 
-<!-- FORM CONTAINER -->
+<form id="discovery-form">
+<!-- Hidden fields sent to Formspree -->
+<input type="hidden" name="_subject" id="form-subject" value="New Brief Submission" />
+<input type="hidden" name="client_identifier" id="client-identifier" value="" />
+
 <div class="form-container">
 
-  <!-- SECTION 1: BUSINESS -->
+  <!-- SECTION 1 -->
   <div class="section active" id="section-1">
     <div class="section-header">
       <div class="section-number">Section 01 of 05</div>
       <h2 class="section-title">Your Business</h2>
       <p class="section-desc">Help us understand who you are, what you do, and what sets you apart.</p>
     </div>
-
     <div class="field-row">
-      <div>
-        <label>Owner / Contact Name <span>*</span></label>
-        <input type="text" placeholder="e.g. Rajesh Kumar" />
-      </div>
-      <div>
-        <label>WhatsApp Number <span>*</span></label>
-        <input type="tel" placeholder="e.g. +91 90324 63247" />
-      </div>
+      <div><label>Owner / Contact Name <span>*</span></label><input type="text" name="owner_name" placeholder="e.g. Rajesh Kumar" /></div>
+      <div><label>WhatsApp Number <span>*</span></label><input type="tel" name="whatsapp" placeholder="e.g. +91 90324 63247" /></div>
     </div>
-
     <div class="field-row">
-      <div>
-        <label>Business Name <span>*</span></label>
-        <input type="text" value="Utsav Stone Art" />
-      </div>
-      <div>
-        <label>Year Established</label>
-        <input type="text" placeholder="e.g. 2018" />
-      </div>
+      <div><label>Business Name <span>*</span></label><input type="text" name="business_name" id="business-name-field" placeholder="Your business name" /></div>
+      <div><label>Year Established</label><input type="text" name="year_established" placeholder="e.g. 2018" /></div>
     </div>
-
-    <div class="field-group">
-      <label>Business Email</label>
-      <input type="email" placeholder="e.g. info@utsavstoneart.com" />
-    </div>
-
-    <div class="field-group">
-      <label>Existing Website (if any)</label>
-      <input type="url" placeholder="e.g. www.utsavstoneart.com or leave blank" />
-    </div>
-
+    <div class="field-group"><label>Business Email</label><input type="email" name="email" placeholder="e.g. info@yourbusiness.com" /></div>
+    <div class="field-group"><label>Existing Website (if any)</label><input type="url" name="existing_website" placeholder="e.g. www.yourbusiness.com or leave blank" /></div>
     <hr class="field-divider">
-
     <div class="field-group">
-      <label>In 2–3 sentences, describe what Utsav Stone Art does <span>*</span></label>
-      <p class="hint">Write it as you would explain it to a new customer walking into your store.</p>
-      <textarea placeholder="We craft hand and machine-made marble, granite and sandstone articles — from deity sculptures to architectural wall elevations — for homes, temples, and commercial spaces across Hyderabad..."></textarea>
+      <label>Describe what your business does <span>*</span></label>
+      <p class="hint">Write it as you would explain it to a new customer walking in.</p>
+      <textarea name="business_description" placeholder="We craft..."></textarea>
     </div>
-
     <div class="field-group">
-      <label>What is the one thing that makes Utsav Stone Art different from any other stone supplier in Hyderabad? <span>*</span></label>
-      <textarea placeholder="Tell us your biggest differentiator..."></textarea>
+      <label>What makes you different from your competitors? <span>*</span></label>
+      <textarea name="differentiator" placeholder="Tell us your biggest differentiator..."></textarea>
     </div>
-
     <div class="field-group">
       <label>Who is your ideal customer? <span>*</span></label>
       <p class="hint">Select all that apply.</p>
       <div class="options-grid">
-        <div class="option-item"><input type="checkbox" id="c1"><label for="c1">Homeowners (residential)</label></div>
-        <div class="option-item"><input type="checkbox" id="c2"><label for="c2">Interior designers / Architects</label></div>
-        <div class="option-item"><input type="checkbox" id="c3"><label for="c3">Builders / Developers</label></div>
-        <div class="option-item"><input type="checkbox" id="c4"><label for="c4">Temples / Religious trusts</label></div>
-        <div class="option-item"><input type="checkbox" id="c5"><label for="c5">Commercial spaces / Offices</label></div>
-        <div class="option-item"><input type="checkbox" id="c6"><label for="c6">Hotels / Hospitality</label></div>
-        <div class="option-item"><input type="checkbox" id="c7"><label for="c7">Landscaping / Outdoor projects</label></div>
-        <div class="option-item"><input type="checkbox" id="c8"><label for="c8">Other</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Homeowners (residential)" id="c1"><label for="c1">Homeowners (residential)</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Interior designers / Architects" id="c2"><label for="c2">Interior designers / Architects</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Builders / Developers" id="c3"><label for="c3">Builders / Developers</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Temples / Religious trusts" id="c4"><label for="c4">Temples / Religious trusts</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Commercial spaces / Offices" id="c5"><label for="c5">Commercial spaces / Offices</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Hotels / Hospitality" id="c6"><label for="c6">Hotels / Hospitality</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Landscaping / Outdoor" id="c7"><label for="c7">Landscaping / Outdoor projects</label></div>
+        <div class="option-item"><input type="checkbox" name="customer_type" value="Other" id="c8"><label for="c8">Other</label></div>
       </div>
     </div>
-
     <div class="field-group">
-      <label>What is your typical project size / budget range?</label>
-      <select>
+      <label>Typical project budget range</label>
+      <select name="budget_range">
         <option value="">— Select range —</option>
         <option>₹10,000 – ₹50,000</option>
         <option>₹50,000 – ₹2,00,000</option>
@@ -734,193 +218,163 @@
         <option>All of the above depending on project</option>
       </select>
     </div>
-
-    <div class="field-group">
-      <label>Which cities / areas do you currently serve?</label>
-      <input type="text" placeholder="e.g. Hyderabad, Secunderabad, Rangareddy, Pan-India for large orders..." />
-    </div>
-
+    <div class="field-group"><label>Cities / Areas you serve</label><input type="text" name="service_areas" placeholder="e.g. Hyderabad, Secunderabad, Pan-India for large orders..." /></div>
     <div class="nav-bar">
       <div></div>
-      <button class="btn btn-primary" onclick="nextSection(1)">Next — Products <span class="btn-icon">→</span></button>
+      <button type="button" class="btn btn-primary" onclick="nextSection(1)">Next — Products <span>→</span></button>
     </div>
   </div>
 
-  <!-- SECTION 2: PRODUCTS -->
+  <!-- SECTION 2 -->
   <div class="section" id="section-2">
     <div class="section-header">
       <div class="section-number">Section 02 of 05</div>
       <h2 class="section-title">Your Products</h2>
       <p class="section-desc">We'll showcase approximately 30 products on the website. Help us organise them right.</p>
     </div>
-
-    <div class="info-box">
-      <strong>Why this matters:</strong> How we categorise and present your products determines how customers navigate the site — and what Google indexes. Clear categories = better rankings.
-    </div>
-
+    <div class="info-box"><strong>Why this matters:</strong> How we categorise your products determines how customers navigate the site — and what Google indexes. Clear categories = better rankings.</div>
     <div class="field-group">
-      <label>What are your main product categories? <span>*</span></label>
-      <p class="hint">Select all that apply — we'll build your website navigation around these.</p>
+      <label>Main product / service categories <span>*</span></label>
+      <p class="hint">Select all that apply.</p>
       <div class="options-grid">
-        <div class="option-item"><input type="checkbox" id="p1"><label for="p1">Wall Elevations</label></div>
-        <div class="option-item"><input type="checkbox" id="p2"><label for="p2">Deity / God Idols</label></div>
-        <div class="option-item"><input type="checkbox" id="p3"><label for="p3">Decorative Panels</label></div>
-        <div class="option-item"><input type="checkbox" id="p4"><label for="p4">Columns & Pillars</label></div>
-        <div class="option-item"><input type="checkbox" id="p5"><label for="p5">Fountain & Water Features</label></div>
-        <div class="option-item"><input type="checkbox" id="p6"><label for="p6">Outdoor / Garden Structures</label></div>
-        <div class="option-item"><input type="checkbox" id="p7"><label for="p7">Flooring & Mosaics</label></div>
-        <div class="option-item"><input type="checkbox" id="p8"><label for="p8">Staircase Cladding</label></div>
-        <div class="option-item"><input type="checkbox" id="p9"><label for="p9">Custom Sculptures</label></div>
-        <div class="option-item"><input type="checkbox" id="p10"><label for="p10">Other (write below)</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Wall Elevations" id="p1"><label for="p1">Wall Elevations</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Deity / God Idols" id="p2"><label for="p2">Deity / God Idols</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Decorative Panels" id="p3"><label for="p3">Decorative Panels</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Columns & Pillars" id="p4"><label for="p4">Columns & Pillars</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Fountain & Water Features" id="p5"><label for="p5">Fountain & Water Features</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Outdoor / Garden Structures" id="p6"><label for="p6">Outdoor / Garden Structures</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Flooring & Mosaics" id="p7"><label for="p7">Flooring & Mosaics</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Staircase Cladding" id="p8"><label for="p8">Staircase Cladding</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Custom Sculptures" id="p9"><label for="p9">Custom Sculptures</label></div>
+        <div class="option-item"><input type="checkbox" name="product_categories" value="Other" id="p10"><label for="p10">Other (write below)</label></div>
       </div>
     </div>
-
-    <div class="field-group">
-      <label>Any other categories not listed above?</label>
-      <input type="text" placeholder="e.g. Temple entrance arches, nameplate carvings..." />
-    </div>
-
+    <div class="field-group"><label>Other categories not listed</label><input type="text" name="other_categories" placeholder="e.g. Temple entrance arches, nameplate carvings..." /></div>
     <hr class="field-divider">
-
     <div class="field-group">
-      <label>Which are your top 5 best-selling or most enquired-about products? <span>*</span></label>
+      <label>Top 5 best-selling / most enquired products <span>*</span></label>
       <p class="hint">These will be featured prominently on the website.</p>
-      <textarea rows="5" placeholder="1. Marble Ganesh idol (most popular)&#10;2. Wall elevation panels for living rooms&#10;3. Decorative entrance columns&#10;4. ...&#10;5. ..."></textarea>
+      <textarea name="top_products" rows="5" placeholder="1. &#10;2. &#10;3. &#10;4. &#10;5. "></textarea>
     </div>
-
     <div class="field-group">
-      <label>What materials do you primarily work with?</label>
+      <label>Materials / mediums you work with</label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="checkbox" id="m1"><label for="m1">White Marble</label></div>
-        <div class="option-item"><input type="checkbox" id="m2"><label for="m2">Black Granite</label></div>
-        <div class="option-item"><input type="checkbox" id="m3"><label for="m3">Sandstone</label></div>
-        <div class="option-item"><input type="checkbox" id="m4"><label for="m4">Kota Stone</label></div>
-        <div class="option-item"><input type="checkbox" id="m5"><label for="m5">Slate</label></div>
-        <div class="option-item"><input type="checkbox" id="m6"><label for="m6">Limestone</label></div>
-        <div class="option-item"><input type="checkbox" id="m7"><label for="m7">Composite / Mixed</label></div>
-        <div class="option-item"><input type="checkbox" id="m8"><label for="m8">Other</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="White Marble" id="m1"><label for="m1">White Marble</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="Black Granite" id="m2"><label for="m2">Black Granite</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="Sandstone" id="m3"><label for="m3">Sandstone</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="Kota Stone" id="m4"><label for="m4">Kota Stone</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="Slate" id="m5"><label for="m5">Slate</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="Limestone" id="m6"><label for="m6">Limestone</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="Composite / Mixed" id="m7"><label for="m7">Composite / Mixed</label></div>
+        <div class="option-item"><input type="checkbox" name="materials" value="Other" id="m8"><label for="m8">Other</label></div>
       </div>
     </div>
-
     <div class="field-row">
       <div>
-        <label>Do you offer custom / made-to-order products?</label>
-        <select>
+        <label>Custom / made-to-order?</label>
+        <select name="custom_orders">
           <option>Yes — all products can be customised</option>
           <option>Yes — select products only</option>
           <option>No — catalogue only</option>
         </select>
       </div>
       <div>
-        <label>What is your typical lead time for an order?</label>
-        <input type="text" placeholder="e.g. 2–4 weeks depending on size" />
+        <label>Typical lead time for an order</label>
+        <input type="text" name="lead_time" placeholder="e.g. 2–4 weeks depending on size" />
       </div>
     </div>
-
     <div class="field-group">
-      <label>Do you have high-quality photos of your products/installations? <span>*</span></label>
-      <p class="hint">Be honest — we'll plan a shoot if needed.</p>
+      <label>Do you have high-quality photos of your products? <span>*</span></label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="radio" name="photos" id="ph1"><label for="ph1">Yes — good photos already available</label></div>
-        <div class="option-item"><input type="radio" name="photos" id="ph2"><label for="ph2">Some — mix of good and average</label></div>
-        <div class="option-item"><input type="radio" name="photos" id="ph3"><label for="ph3">No — mostly phone shots</label></div>
-        <div class="option-item"><input type="radio" name="photos" id="ph4"><label for="ph4">None — need a full shoot</label></div>
+        <div class="option-item"><input type="radio" name="photo_readiness" value="Yes — good photos available" id="ph1"><label for="ph1">Yes — good photos available</label></div>
+        <div class="option-item"><input type="radio" name="photo_readiness" value="Mix of good and average" id="ph2"><label for="ph2">Some — mix of good and average</label></div>
+        <div class="option-item"><input type="radio" name="photo_readiness" value="Mostly phone shots" id="ph3"><label for="ph3">No — mostly phone shots</label></div>
+        <div class="option-item"><input type="radio" name="photo_readiness" value="None — need a full shoot" id="ph4"><label for="ph4">None — need a full shoot</label></div>
       </div>
     </div>
-
     <div class="nav-bar">
-      <button class="btn btn-secondary" onclick="prevSection(2)"><span class="btn-icon">←</span> Back</button>
-      <button class="btn btn-primary" onclick="nextSection(2)">Next — Website <span class="btn-icon">→</span></button>
+      <button type="button" class="btn btn-secondary" onclick="prevSection(2)"><span>←</span> Back</button>
+      <button type="button" class="btn btn-primary" onclick="nextSection(2)">Next — Website <span>→</span></button>
     </div>
   </div>
 
-  <!-- SECTION 3: WEBSITE -->
+  <!-- SECTION 3 -->
   <div class="section" id="section-3">
     <div class="section-header">
       <div class="section-number">Section 03 of 05</div>
       <h2 class="section-title">Your Website</h2>
       <p class="section-desc">Your website is your 24/7 salesperson. Let's build it right.</p>
     </div>
-
     <div class="field-group">
       <label>What should the website primarily achieve? <span>*</span></label>
       <p class="hint">Select your top 2.</p>
       <div class="options-grid">
-        <div class="option-item"><input type="checkbox" id="w1"><label for="w1">Showcase work & products</label></div>
-        <div class="option-item"><input type="checkbox" id="w2"><label for="w2">Generate enquiries / leads</label></div>
-        <div class="option-item"><input type="checkbox" id="w3"><label for="w3">Appear on Google search</label></div>
-        <div class="option-item"><input type="checkbox" id="w4"><label for="w4">Build brand credibility</label></div>
-        <div class="option-item"><input type="checkbox" id="w5"><label for="w5">Allow online ordering / quotes</label></div>
-        <div class="option-item"><input type="checkbox" id="w6"><label for="w6">Help interior designers find us</label></div>
+        <div class="option-item"><input type="checkbox" name="website_goal" value="Showcase work & products" id="w1"><label for="w1">Showcase work & products</label></div>
+        <div class="option-item"><input type="checkbox" name="website_goal" value="Generate enquiries / leads" id="w2"><label for="w2">Generate enquiries / leads</label></div>
+        <div class="option-item"><input type="checkbox" name="website_goal" value="Appear on Google search" id="w3"><label for="w3">Appear on Google search</label></div>
+        <div class="option-item"><input type="checkbox" name="website_goal" value="Build brand credibility" id="w4"><label for="w4">Build brand credibility</label></div>
+        <div class="option-item"><input type="checkbox" name="website_goal" value="Allow online ordering / quotes" id="w5"><label for="w5">Allow online ordering / quotes</label></div>
+        <div class="option-item"><input type="checkbox" name="website_goal" value="Help interior designers find us" id="w6"><label for="w6">Help interior designers find us</label></div>
       </div>
     </div>
-
     <div class="field-group">
-      <label>What feeling should someone have when they land on your website? <span>*</span></label>
+      <label>What feeling should someone have on your website? <span>*</span></label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="radio" name="feel" id="f1"><label for="f1">Premium & luxurious</label></div>
-        <div class="option-item"><input type="radio" name="feel" id="f2"><label for="f2">Traditional & trustworthy</label></div>
-        <div class="option-item"><input type="radio" name="feel" id="f3"><label for="f3">Modern & architectural</label></div>
-        <div class="option-item"><input type="radio" name="feel" id="f4"><label for="f4">Spiritual & cultural</label></div>
-        <div class="option-item"><input type="radio" name="feel" id="f5"><label for="f5">Bold & impressive</label></div>
-        <div class="option-item"><input type="radio" name="feel" id="f6"><label for="f6">Warm & approachable</label></div>
+        <div class="option-item"><input type="radio" name="website_feel" value="Premium & luxurious" id="f1"><label for="f1">Premium & luxurious</label></div>
+        <div class="option-item"><input type="radio" name="website_feel" value="Traditional & trustworthy" id="f2"><label for="f2">Traditional & trustworthy</label></div>
+        <div class="option-item"><input type="radio" name="website_feel" value="Modern & architectural" id="f3"><label for="f3">Modern & architectural</label></div>
+        <div class="option-item"><input type="radio" name="website_feel" value="Spiritual & cultural" id="f4"><label for="f4">Spiritual & cultural</label></div>
+        <div class="option-item"><input type="radio" name="website_feel" value="Bold & impressive" id="f5"><label for="f5">Bold & impressive</label></div>
+        <div class="option-item"><input type="radio" name="website_feel" value="Warm & approachable" id="f6"><label for="f6">Warm & approachable</label></div>
       </div>
     </div>
-
     <div class="field-group">
-      <label>Are there any websites (any industry) whose design you admire?</label>
-      <p class="hint">Could be a competitor, a luxury brand, or any website you like the look of.</p>
-      <input type="text" placeholder="e.g. www.example.com, or describe: 'dark background, gold accents, large images'" />
+      <label>Any websites whose design you admire?</label>
+      <input type="text" name="design_inspiration" placeholder="e.g. www.example.com, or describe the look and feel you want" />
     </div>
-
     <hr class="field-divider">
-
     <div class="field-group">
-      <label>What pages do you want on the website? <span>*</span></label>
-      <p class="hint">Select all that you want.</p>
+      <label>Pages you want on the website <span>*</span></label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="checkbox" id="pg1" checked><label for="pg1">Home</label></div>
-        <div class="option-item"><input type="checkbox" id="pg2" checked><label for="pg2">About Us</label></div>
-        <div class="option-item"><input type="checkbox" id="pg3" checked><label for="pg3">Products / Portfolio</label></div>
-        <div class="option-item"><input type="checkbox" id="pg4" checked><label for="pg4">Gallery</label></div>
-        <div class="option-item"><input type="checkbox" id="pg5"><label for="pg5">Services</label></div>
-        <div class="option-item"><input type="checkbox" id="pg6" checked><label for="pg6">Contact / Enquiry Form</label></div>
-        <div class="option-item"><input type="checkbox" id="pg7"><label for="pg7">Customer Testimonials</label></div>
-        <div class="option-item"><input type="checkbox" id="pg8"><label for="pg8">Blog / Articles</label></div>
-        <div class="option-item"><input type="checkbox" id="pg9"><label for="pg9">WhatsApp Chat Button</label></div>
-        <div class="option-item"><input type="checkbox" id="pg10"><label for="pg10">Google Map / Location</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Home" id="pg1" checked><label for="pg1">Home</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="About Us" id="pg2" checked><label for="pg2">About Us</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Products / Portfolio" id="pg3" checked><label for="pg3">Products / Portfolio</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Gallery" id="pg4" checked><label for="pg4">Gallery</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Services" id="pg5"><label for="pg5">Services</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Contact / Enquiry Form" id="pg6" checked><label for="pg6">Contact / Enquiry Form</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Customer Testimonials" id="pg7"><label for="pg7">Customer Testimonials</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Blog / Articles" id="pg8"><label for="pg8">Blog / Articles</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="WhatsApp Chat Button" id="pg9"><label for="pg9">WhatsApp Chat Button</label></div>
+        <div class="option-item"><input type="checkbox" name="pages" value="Google Map / Location" id="pg10"><label for="pg10">Google Map / Location</label></div>
       </div>
     </div>
-
     <div class="field-group">
-      <label>What keywords do you want to rank for on Google? <span>*</span></label>
-      <p class="hint">Think: what does your ideal customer type into Google to find you?</p>
-      <textarea rows="4" placeholder="e.g.&#10;- Stone art Hyderabad&#10;- Marble idols Hyderabad&#10;- Wall elevation Gandipet&#10;- Stone carving near me&#10;- Marble deity sculptures Hyderabad"></textarea>
+      <label>Keywords you want to rank for on Google <span>*</span></label>
+      <p class="hint">What does your ideal customer type into Google to find you?</p>
+      <textarea name="seo_keywords" rows="4" placeholder="e.g.&#10;- Stone art Hyderabad&#10;- Marble idols Hyderabad&#10;- Wall elevation near me"></textarea>
     </div>
-
     <div class="field-group">
-      <label>Do you want the website to appear on Google search results specifically for Hyderabad? <span>*</span></label>
+      <label>Google search target area <span>*</span></label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="radio" name="local" id="l1"><label for="l1">Yes — Hyderabad only</label></div>
-        <div class="option-item"><input type="radio" name="local" id="l2"><label for="l2">Hyderabad + all of Telangana</label></div>
-        <div class="option-item"><input type="radio" name="local" id="l3"><label for="l3">Pan-India (all cities)</label></div>
-        <div class="option-item"><input type="radio" name="local" id="l4"><label for="l4">All of the above</label></div>
+        <div class="option-item"><input type="radio" name="seo_area" value="Hyderabad only" id="l1"><label for="l1">Hyderabad only</label></div>
+        <div class="option-item"><input type="radio" name="seo_area" value="Hyderabad + all of Telangana" id="l2"><label for="l2">Hyderabad + all of Telangana</label></div>
+        <div class="option-item"><input type="radio" name="seo_area" value="Pan-India" id="l3"><label for="l3">Pan-India (all cities)</label></div>
+        <div class="option-item"><input type="radio" name="seo_area" value="All of the above" id="l4"><label for="l4">All of the above</label></div>
       </div>
     </div>
-
     <div class="field-row">
       <div>
-        <label>Do you have a Google Business Profile set up?</label>
-        <select>
-          <option>Yes — already set up and verified</option>
+        <label>Google Business Profile status</label>
+        <select name="google_business">
+          <option>Yes — set up and verified</option>
           <option>Yes — set up but not fully optimised</option>
           <option>No — needs to be created</option>
           <option>Not sure</option>
         </select>
       </div>
       <div>
-        <label>Languages for the website?</label>
-        <select>
+        <label>Website language(s)</label>
+        <select name="website_language">
           <option>English only</option>
           <option>English + Telugu</option>
           <option>English + Hindi</option>
@@ -928,83 +382,61 @@
         </select>
       </div>
     </div>
-
     <div class="nav-bar">
-      <button class="btn btn-secondary" onclick="prevSection(3)"><span class="btn-icon">←</span> Back</button>
-      <button class="btn btn-primary" onclick="nextSection(3)">Next — Content <span class="btn-icon">→</span></button>
+      <button type="button" class="btn btn-secondary" onclick="prevSection(3)"><span>←</span> Back</button>
+      <button type="button" class="btn btn-primary" onclick="nextSection(3)">Next — Content <span>→</span></button>
     </div>
   </div>
 
-  <!-- SECTION 4: CONTENT & SOCIAL -->
+  <!-- SECTION 4 -->
   <div class="section" id="section-4">
     <div class="section-header">
       <div class="section-number">Section 04 of 05</div>
       <h2 class="section-title">Content & Social Media</h2>
       <p class="section-desc">We'll manage your Instagram, create your reels, and make your work impossible to scroll past.</p>
     </div>
-
     <div class="field-row">
-      <div>
-        <label>Instagram handle <span>*</span></label>
-        <input type="text" value="@utsav_stoneart" />
-      </div>
-      <div>
-        <label>Facebook page (if any)</label>
-        <input type="text" placeholder="e.g. facebook.com/utsavstoneart" />
-      </div>
+      <div><label>Instagram handle <span>*</span></label><input type="text" name="instagram" placeholder="@yourhandle" /></div>
+      <div><label>Facebook page (if any)</label><input type="text" name="facebook" placeholder="e.g. facebook.com/yourbusiness" /></div>
     </div>
-
     <div class="field-row">
-      <div>
-        <label>YouTube channel (if any)</label>
-        <input type="url" placeholder="e.g. youtube.com/@utsavstoneart" />
-      </div>
-      <div>
-        <label>Any other platforms?</label>
-        <input type="text" placeholder="e.g. Pinterest, JustDial, IndiaMART..." />
-      </div>
+      <div><label>YouTube channel (if any)</label><input type="url" name="youtube" placeholder="e.g. youtube.com/@yourbusiness" /></div>
+      <div><label>Other platforms</label><input type="text" name="other_platforms" placeholder="e.g. Pinterest, JustDial, IndiaMART..." /></div>
     </div>
-
     <hr class="field-divider">
-
     <div class="field-group">
-      <label>What type of content do you want most? <span>*</span></label>
-      <p class="hint">Rank your top 3 (select in order of priority).</p>
+      <label>Content types you want most <span>*</span></label>
+      <p class="hint">Select your top 3 priorities.</p>
       <div class="options-grid">
-        <div class="option-item"><input type="checkbox" id="ct1"><label for="ct1">Before & After transformations</label></div>
-        <div class="option-item"><input type="checkbox" id="ct2"><label for="ct2">Finished installation tours</label></div>
-        <div class="option-item"><input type="checkbox" id="ct3"><label for="ct3">Product close-up reels</label></div>
-        <div class="option-item"><input type="checkbox" id="ct4"><label for="ct4">Behind the scenes / craftsmen at work</label></div>
-        <div class="option-item"><input type="checkbox" id="ct5"><label for="ct5">Customer testimonial videos</label></div>
-        <div class="option-item"><input type="checkbox" id="ct6"><label for="ct6">Educational / 'How it's made'</label></div>
-        <div class="option-item"><input type="checkbox" id="ct7"><label for="ct7">Festival / seasonal promotions</label></div>
-        <div class="option-item"><input type="checkbox" id="ct8"><label for="ct8">New arrivals & product showcases</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="Before & After transformations" id="ct1"><label for="ct1">Before & After transformations</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="Finished installation tours" id="ct2"><label for="ct2">Finished installation tours</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="Product close-up reels" id="ct3"><label for="ct3">Product close-up reels</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="Behind the scenes / craftsmen" id="ct4"><label for="ct4">Behind the scenes / craftsmen</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="Customer testimonial videos" id="ct5"><label for="ct5">Customer testimonials</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="Educational / How it's made" id="ct6"><label for="ct6">Educational / How it's made</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="Festival / seasonal promotions" id="ct7"><label for="ct7">Festival / seasonal promotions</label></div>
+        <div class="option-item"><input type="checkbox" name="content_type" value="New arrivals & product showcases" id="ct8"><label for="ct8">New arrivals & showcases</label></div>
       </div>
     </div>
-
     <div class="field-group">
-      <label>What tone should your social media content carry? <span>*</span></label>
+      <label>Tone for your social media content <span>*</span></label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="radio" name="tone" id="t1"><label for="t1">Premium & aspirational</label></div>
-        <div class="option-item"><input type="radio" name="tone" id="t2"><label for="t2">Traditional & cultural</label></div>
-        <div class="option-item"><input type="radio" name="tone" id="t3"><label for="t3">Modern & design-forward</label></div>
-        <div class="option-item"><input type="radio" name="tone" id="t4"><label for="t4">Warm & community-driven</label></div>
-        <div class="option-item"><input type="radio" name="tone" id="t5"><label for="t5">Bold & confident</label></div>
-        <div class="option-item"><input type="radio" name="tone" id="t6"><label for="t6">Mix of all above</label></div>
+        <div class="option-item"><input type="radio" name="content_tone" value="Premium & aspirational" id="t1"><label for="t1">Premium & aspirational</label></div>
+        <div class="option-item"><input type="radio" name="content_tone" value="Traditional & cultural" id="t2"><label for="t2">Traditional & cultural</label></div>
+        <div class="option-item"><input type="radio" name="content_tone" value="Modern & design-forward" id="t3"><label for="t3">Modern & design-forward</label></div>
+        <div class="option-item"><input type="radio" name="content_tone" value="Warm & community-driven" id="t4"><label for="t4">Warm & community-driven</label></div>
+        <div class="option-item"><input type="radio" name="content_tone" value="Bold & confident" id="t5"><label for="t5">Bold & confident</label></div>
+        <div class="option-item"><input type="radio" name="content_tone" value="Mix of all above" id="t6"><label for="t6">Mix of all above</label></div>
       </div>
     </div>
-
     <div class="field-group">
-      <label>Are there any Instagram accounts in your industry whose content you admire?</label>
-      <p class="hint">Could be a competitor or any brand/creator — in India or abroad.</p>
-      <input type="text" placeholder="e.g. @example_stoneart, @luxury_decor_india..." />
+      <label>Accounts whose content you admire</label>
+      <input type="text" name="content_inspiration" placeholder="e.g. @example_brand, @luxury_decor_india..." />
     </div>
-
     <hr class="field-divider">
-
     <div class="field-group">
-      <label>How often are you currently posting on Instagram?</label>
-      <select>
+      <label>Current posting frequency on Instagram</label>
+      <select name="posting_frequency">
         <option>Daily</option>
         <option>4–5 times a week</option>
         <option>2–3 times a week</option>
@@ -1012,110 +444,92 @@
         <option>Inconsistently</option>
       </select>
     </div>
-
     <div class="field-group">
-      <label>What is your biggest frustration with your current social media?</label>
-      <textarea rows="3" placeholder="e.g. Not getting enough followers despite posting regularly. Reels don't get views. Don't know what to post..."></textarea>
+      <label>Biggest frustration with your current social media</label>
+      <textarea name="social_frustration" rows="3" placeholder="e.g. Not getting enough followers despite posting regularly..."></textarea>
     </div>
-
     <div class="field-group">
-      <label>Do you have video footage of ongoing site work / installations we can use?</label>
+      <label>Do you have video footage of your work we can use?</label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="radio" name="footage" id="ft1"><label for="ft1">Yes — plenty of footage available</label></div>
-        <div class="option-item"><input type="radio" name="footage" id="ft2"><label for="ft2">Some — a few videos</label></div>
-        <div class="option-item"><input type="radio" name="footage" id="ft3"><label for="ft3">Very little</label></div>
-        <div class="option-item"><input type="radio" name="footage" id="ft4"><label for="ft4">No — need a fresh shoot</label></div>
+        <div class="option-item"><input type="radio" name="footage_available" value="Yes — plenty of footage" id="ft1"><label for="ft1">Yes — plenty available</label></div>
+        <div class="option-item"><input type="radio" name="footage_available" value="Some — a few videos" id="ft2"><label for="ft2">Some — a few videos</label></div>
+        <div class="option-item"><input type="radio" name="footage_available" value="Very little" id="ft3"><label for="ft3">Very little</label></div>
+        <div class="option-item"><input type="radio" name="footage_available" value="None — need a fresh shoot" id="ft4"><label for="ft4">None — need a fresh shoot</label></div>
       </div>
     </div>
-
     <div class="nav-bar">
-      <button class="btn btn-secondary" onclick="prevSection(4)"><span class="btn-icon">←</span> Back</button>
-      <button class="btn btn-primary" onclick="nextSection(4)">Next — Goals <span class="btn-icon">→</span></button>
+      <button type="button" class="btn btn-secondary" onclick="prevSection(4)"><span>←</span> Back</button>
+      <button type="button" class="btn btn-primary" onclick="nextSection(4)">Next — Goals <span>→</span></button>
     </div>
   </div>
 
-  <!-- SECTION 5: GOALS -->
+  <!-- SECTION 5 -->
   <div class="section" id="section-5">
     <div class="section-header">
       <div class="section-number">Section 05 of 05</div>
       <h2 class="section-title">Your Goals</h2>
       <p class="section-desc">The final piece. This shapes how we measure success together.</p>
     </div>
-
     <div class="field-group">
-      <label>What is your #1 business goal for the next 12 months? <span>*</span></label>
+      <label>#1 business goal for the next 12 months <span>*</span></label>
       <div class="options-grid two-col">
-        <div class="option-item"><input type="radio" name="goal" id="g1"><label for="g1">Get more walk-in customers to the store</label></div>
-        <div class="option-item"><input type="radio" name="goal" id="g2"><label for="g2">Increase online enquiries & leads</label></div>
-        <div class="option-item"><input type="radio" name="goal" id="g3"><label for="g3">Attract interior designers / B2B clients</label></div>
-        <div class="option-item"><input type="radio" name="goal" id="g4"><label for="g4">Build brand recognition in Hyderabad</label></div>
-        <div class="option-item"><input type="radio" name="goal" id="g5"><label for="g5">Expand to other cities</label></div>
-        <div class="option-item"><input type="radio" name="goal" id="g6"><label for="g6">Grow Instagram following significantly</label></div>
+        <div class="option-item"><input type="radio" name="primary_goal" value="Get more walk-in customers" id="g1"><label for="g1">More walk-in customers</label></div>
+        <div class="option-item"><input type="radio" name="primary_goal" value="Increase online enquiries & leads" id="g2"><label for="g2">Increase online enquiries</label></div>
+        <div class="option-item"><input type="radio" name="primary_goal" value="Attract interior designers / B2B" id="g3"><label for="g3">Attract interior designers / B2B</label></div>
+        <div class="option-item"><input type="radio" name="primary_goal" value="Build brand recognition in Hyderabad" id="g4"><label for="g4">Brand recognition in Hyderabad</label></div>
+        <div class="option-item"><input type="radio" name="primary_goal" value="Expand to other cities" id="g5"><label for="g5">Expand to other cities</label></div>
+        <div class="option-item"><input type="radio" name="primary_goal" value="Grow Instagram following" id="g6"><label for="g6">Grow Instagram following</label></div>
       </div>
     </div>
-
-    <div class="field-group">
-      <label>How many new enquiries per month are you currently getting?</label>
-      <select>
-        <option>Less than 10</option>
-        <option>10 – 25</option>
-        <option>25 – 50</option>
-        <option>50 – 100</option>
-        <option>100+</option>
-      </select>
+    <div class="field-row">
+      <div>
+        <label>Current enquiries per month</label>
+        <select name="current_enquiries">
+          <option>Less than 10</option><option>10 – 25</option><option>25 – 50</option><option>50 – 100</option><option>100+</option>
+        </select>
+      </div>
+      <div>
+        <label>Target enquiries per month</label>
+        <select name="target_enquiries">
+          <option>25 – 50 per month</option><option>50 – 100 per month</option><option>100 – 200 per month</option><option>200+ per month</option>
+        </select>
+      </div>
     </div>
-
-    <div class="field-group">
-      <label>How many new enquiries per month would be your target with our help?</label>
-      <select>
-        <option>25 – 50 per month</option>
-        <option>50 – 100 per month</option>
-        <option>100 – 200 per month</option>
-        <option>200+ per month</option>
-      </select>
-    </div>
-
     <hr class="field-divider">
-
     <div class="field-group">
-      <label>Who are your main competitors in Hyderabad? <span>*</span></label>
-      <p class="hint">Name them — we'll study them and help you outrank and outshine them.</p>
-      <textarea rows="3" placeholder="e.g. Indian Stone Crafts (Gachibowli), StoneLife Super Studio (Nanakramguda)..."></textarea>
+      <label>Main competitors <span>*</span></label>
+      <p class="hint">Name them — we'll study and help you outrank and outshine them.</p>
+      <textarea name="competitors" rows="3" placeholder="e.g. Competitor A (location), Competitor B (location)..."></textarea>
     </div>
-
     <div class="field-group">
       <label>What do competitors do better than you right now?</label>
-      <textarea rows="3" placeholder="Be honest — this helps us close those gaps for you..."></textarea>
+      <textarea name="competitor_advantage" rows="3" placeholder="Be honest — this helps us close those gaps for you..."></textarea>
     </div>
-
     <div class="field-group">
       <label>What do you do better than all of them?</label>
-      <textarea rows="3" placeholder="This becomes the core of your content and brand message..."></textarea>
+      <textarea name="your_advantage" rows="3" placeholder="This becomes the core of your content and brand message..."></textarea>
     </div>
-
     <hr class="field-divider">
-
     <div class="field-group">
-      <label>On a scale of 1–5, how urgently do you want to get started? <span>*</span></label>
+      <label>How urgently do you want to get started? (1–5) <span>*</span></label>
       <p class="hint">1 = Just exploring &nbsp;&nbsp; 5 = Ready to begin this week</p>
       <div class="scale-buttons" id="urgency-scale">
-        <button class="scale-btn" onclick="selectScale('urgency-scale', this, 1)">1</button>
-        <button class="scale-btn" onclick="selectScale('urgency-scale', this, 2)">2</button>
-        <button class="scale-btn" onclick="selectScale('urgency-scale', this, 3)">3</button>
-        <button class="scale-btn" onclick="selectScale('urgency-scale', this, 4)">4</button>
-        <button class="scale-btn" onclick="selectScale('urgency-scale', this, 5)">5</button>
+        <button type="button" class="scale-btn" onclick="selectScale(this, '1')">1</button>
+        <button type="button" class="scale-btn" onclick="selectScale(this, '2')">2</button>
+        <button type="button" class="scale-btn" onclick="selectScale(this, '3')">3</button>
+        <button type="button" class="scale-btn" onclick="selectScale(this, '4')">4</button>
+        <button type="button" class="scale-btn" onclick="selectScale(this, '5')">5</button>
       </div>
+      <input type="hidden" name="urgency_score" id="urgency_score" value="" />
     </div>
-
     <div class="field-group">
-      <label>Is there anything else you'd like us to know before we build your strategy?</label>
-      <textarea rows="4" placeholder="Any specific requirements, concerns, previous bad experiences with agencies, expectations, or anything else important..."></textarea>
+      <label>Anything else we should know?</label>
+      <textarea name="additional_notes" rows="4" placeholder="Any specific requirements, concerns, previous bad experiences with agencies, expectations..."></textarea>
     </div>
-
     <div class="field-group">
       <label>How did you hear about Production X?</label>
-      <select>
-        <option>— Select —</option>
+      <select name="referral_source">
+        <option value="">— Select —</option>
         <option>Walk-in visit from the team</option>
         <option>Instagram</option>
         <option>Google Search</option>
@@ -1123,16 +537,17 @@
         <option>Other</option>
       </select>
     </div>
-
+    <div id="error-msg" class="error-msg">Something went wrong. Please try again or WhatsApp Kiran on +91 93919 26846.</div>
     <div class="nav-bar">
-      <button class="btn btn-secondary" onclick="prevSection(5)"><span class="btn-icon">←</span> Back</button>
-      <button class="btn btn-primary" onclick="submitForm()">Submit Brief <span class="btn-icon">✦</span></button>
+      <button type="button" class="btn btn-secondary" onclick="prevSection(5)"><span>←</span> Back</button>
+      <button type="button" class="btn btn-primary" id="submit-btn" onclick="submitForm()">Submit Brief <span>✦</span></button>
     </div>
   </div>
 
 </div>
+</form>
 
-<!-- SUCCESS SCREEN -->
+<!-- SUCCESS -->
 <div class="success-screen" id="success">
   <div class="success-icon">✦</div>
   <h2 class="success-title">Brief Received.</h2>
@@ -1143,72 +558,100 @@
     2. We build a custom strategy for your website, content, and Google rankings<br>
     3. We schedule a strategy call to walk you through the plan<br>
     4. You approve — we begin<br><br>
-    <strong>Questions?</strong> WhatsApp Kiran directly: <a href="https://wa.me/919391926846" style="color:var(--gold)">+91 93919 26846</a>
+    <strong>Questions?</strong> WhatsApp Kiran: <a href="https://wa.me/919391926846" style="color:var(--gold)">+91 93919 26846</a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer class="form-footer">
-  Prepared exclusively for Utsav Stone Art · <a href="https://productionx.in">productionx.in</a> · <a href="mailto:info@productionx.in">info@productionx.in</a>
-  <br>All information shared is strictly confidential.
+  <a href="https://productionx.in">productionx.in</a> · <a href="mailto:info@productionx.in">info@productionx.in</a><br>
+  All information shared is strictly confidential.
 </footer>
 
-<script>
-  let currentSection = 1;
-  const totalSections = 5;
+</div><!-- end main-content -->
 
+<script>
+  // ── READ CLIENT FROM URL PARAMETER ──
+  const params = new URLSearchParams(window.location.search);
+  const rawClient = params.get('client');
+
+  if (!rawClient || rawClient.trim() === '') {
+    // No client param — show invalid screen
+    document.getElementById('invalid-screen').classList.add('active');
+  } else {
+    // Format: "Utsav-Stone-Art" → "Utsav Stone Art"
+    const clientName = rawClient.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+    // Inject client name into UI
+    document.getElementById('hero-client-name').textContent = clientName;
+    document.getElementById('badge-client-name').textContent = clientName;
+    document.getElementById('business-name-field').value = clientName;
+
+    // Set hidden fields for Formspree
+    document.getElementById('client-identifier').value = clientName;
+    document.getElementById('form-subject').value = '📋 New Brief: ' + clientName + ' — Production X';
+
+    // Show the form
+    document.getElementById('main-content').style.display = 'block';
+  }
+
+  // ── NAVIGATION ──
   function updateProgress(section) {
-    for (let i = 1; i <= totalSections; i++) {
-      const stepEl = document.getElementById('step-' + i);
-      stepEl.classList.remove('active', 'done');
-      if (i < section) stepEl.classList.add('done');
-      else if (i === section) stepEl.classList.add('active');
+    for (let i = 1; i <= 5; i++) {
+      const el = document.getElementById('step-' + i);
+      el.classList.remove('active', 'done');
+      if (i < section) el.classList.add('done');
+      else if (i === section) el.classList.add('active');
     }
   }
 
   function nextSection(from) {
-    const current = document.getElementById('section-' + from);
-    const next = document.getElementById('section-' + (from + 1));
-    if (current && next) {
-      current.classList.remove('active');
-      next.classList.add('active');
-      currentSection = from + 1;
-      updateProgress(currentSection);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
-  function prevSection(from) {
-    const current = document.getElementById('section-' + from);
-    const prev = document.getElementById('section-' + (from - 1));
-    if (current && prev) {
-      current.classList.remove('active');
-      prev.classList.add('active');
-      currentSection = from - 1;
-      updateProgress(currentSection);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
-
-  function selectScale(groupId, btn, value) {
-    const group = document.getElementById(groupId);
-    group.querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-  }
-
-  function submitForm() {
-    // Hide all sections
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelector('.progress-bar').style.display = 'none';
-    document.getElementById('success').classList.add('active');
+    document.getElementById('section-' + from).classList.remove('active');
+    document.getElementById('section-' + (from + 1)).classList.add('active');
+    updateProgress(from + 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // Mark done circles on step click for done steps
-  document.querySelectorAll('.step').forEach((step, idx) => {
-    step.style.cursor = 'default';
-  });
-</script>
+  function prevSection(from) {
+    document.getElementById('section-' + from).classList.remove('active');
+    document.getElementById('section-' + (from - 1)).classList.add('active');
+    updateProgress(from - 1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
+  function selectScale(btn, value) {
+    document.getElementById('urgency-scale').querySelectorAll('.scale-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    document.getElementById('urgency_score').value = value;
+  }
+
+  // ── SUBMIT TO FORMSPREE ──
+  async function submitForm() {
+    const btn = document.getElementById('submit-btn');
+    const errMsg = document.getElementById('error-msg');
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+    errMsg.style.display = 'none';
+
+    const form = document.getElementById('discovery-form');
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xykqkpln', {
+        method: 'POST', body: data, headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.querySelector('.progress-bar').style.display = 'none';
+        document.getElementById('discovery-form').style.display = 'none';
+        document.getElementById('success').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else { throw new Error(); }
+    } catch {
+      errMsg.style.display = 'block';
+      btn.disabled = false;
+      btn.innerHTML = 'Submit Brief <span>✦</span>';
+    }
+  }
+</script>
 </body>
 </html>
