@@ -707,164 +707,6 @@
       line-height: 1.7;
     }
 
-    /* ── PACKAGES ──────────────────────────────────────── */
-    #packages { background: var(--dark); }
-    .packages-tabs {
-      display: flex; gap: 2px; margin-bottom: 48px;
-    }
-    .pkg-tab {
-      font-size: 11px; font-weight: 300; letter-spacing: 0.12em;
-      text-transform: uppercase; color: var(--grey);
-      background: var(--surface); border: none;
-      padding: 14px 32px; cursor: none; transition: all 0.3s;
-    }
-    .pkg-tab.active { background: var(--gold); color: var(--black); }
-
-    .pkg-grid {
-      display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
-    }
-    .pkg-card {
-      background: var(--surface); padding: 48px 40px;
-      position: relative; overflow: hidden;
-      transition: transform 0.4s;
-    }
-    .pkg-card:hover { transform: translateY(-4px); }
-    .pkg-popular {
-      position: absolute; top: 0; right: 32px;
-      background: var(--gold); color: var(--black);
-      font-size: 9px; font-weight: 500; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 6px 14px;
-      animation: popularPulse 3s ease-in-out infinite;
-    }
-    @keyframes popularPulse {
-      0%,100% { box-shadow: 0 0 0 0 rgba(201,168,76,0); }
-      50% { box-shadow: 0 0 0 6px rgba(201,168,76,0.2); }
-    }
-    .pkg-tier {
-      font-size: 10px; font-weight: 300; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 12px; display: block;
-    }
-    .pkg-price {
-      font-family: var(--font-serif); font-size: 42px;
-      font-weight: 300; color: var(--white);
-      line-height: 1; margin-bottom: 4px;
-    }
-    .pkg-period {
-      font-size: 11px; font-weight: 200; color: var(--grey);
-      letter-spacing: 0.1em; margin-bottom: 32px; display: block;
-    }
-    .pkg-divider {
-      height: 1px; background: var(--border);
-      margin-bottom: 28px;
-    }
-    .pkg-list { list-style: none; margin-bottom: 40px; }
-    .pkg-list li {
-      font-size: 12px; font-weight: 200; color: #AAAAAA;
-      padding: 8px 0; border-bottom: 0.5px solid var(--border);
-      display: flex; align-items: center; gap: 10px;
-    }
-    .pkg-list li::before {
-      content: ''; display: inline-block; width: 4px; height: 4px;
-      background: var(--gold); border-radius: 50%; flex-shrink: 0;
-    }
-    .pkg-list li:last-child { border-bottom: none; }
-
-    .pkg-btn {
-      display: block; text-align: center; padding: 14px;
-      background: none; border: 1px solid var(--border);
-      color: var(--white); font-size: 11px; font-weight: 300;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color 0.3s, color 0.3s, background 0.3s;
-    }
-    .pkg-btn:hover { border-color: var(--gold); color: var(--gold); }
-    .pkg-card:nth-child(2) .pkg-btn {
-      background: var(--gold); border-color: var(--gold); color: var(--black);
-    }
-    .pkg-card:nth-child(2) .pkg-btn:hover {
-      background: var(--white); border-color: var(--white);
-    }
-
-    .pkg-note {
-      font-size: 11px; font-weight: 200; color: var(--grey-lt);
-      letter-spacing: 0.08em; margin-top: 24px; text-align: center;
-    }
-
-    /* Web dev packages */
-    .web-grid {
-      display: grid; grid-template-columns: repeat(4,1fr); gap: 2px;
-    }
-    .web-card {
-      background: var(--surface); padding: 36px 28px;
-      position: relative; overflow: hidden;
-      transition: transform 0.4s, border-color 0.3s;
-      border-top: 2px solid transparent;
-    }
-    .web-card:hover { transform: translateY(-4px); border-top-color: var(--gold); }
-    .web-card.popular { border-top-color: var(--gold); }
-    .web-popular {
-      position: absolute; top: 0; right: 20px;
-      background: var(--gold); color: var(--black);
-      font-size: 8px; font-weight: 500; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 4px 10px;
-      animation: popularPulse 3s ease-in-out infinite;
-    }
-    .web-tier {
-      font-size: 10px; font-weight: 300; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
-    }
-    .web-price {
-      font-family: var(--font-serif); font-size: 34px;
-      font-weight: 300; color: var(--white); line-height: 1;
-    }
-    .web-type {
-      font-size: 10px; font-weight: 200; color: var(--grey);
-      letter-spacing: 0.08em; margin-bottom: 8px; display: block;
-    }
-    .web-for {
-      font-size: 10px; font-weight: 200; color: var(--grey-lt);
-      letter-spacing: 0.04em; margin-bottom: 24px; display: block;
-      border-left: 1px solid var(--border); padding-left: 10px;
-    }
-    .web-list { list-style: none; margin-bottom: 28px; }
-    .web-list li {
-      font-size: 11px; font-weight: 200; color: #AAAAAA;
-      padding: 5px 0; border-bottom: 0.5px solid var(--border);
-      display: flex; gap: 8px; align-items: center;
-    }
-    .web-list li::before {
-      content: ''; width: 3px; height: 3px; background: var(--gold);
-      border-radius: 50%; flex-shrink: 0;
-    }
-    .web-list li:last-child { border-bottom: none; }
-    .web-btn {
-      display: block; text-align: center; padding: 10px;
-      border: 0.5px solid var(--border); color: var(--grey);
-      font-size: 10px; font-weight: 300; letter-spacing: 0.1em;
-      text-transform: uppercase; text-decoration: none;
-      transition: all 0.3s;
-    }
-    .web-btn:hover { border-color: var(--gold); color: var(--gold); }
-
-    .web-addon {
-      margin-top: 24px; background: var(--surface);
-      padding: 24px 32px; display: flex;
-      justify-content: space-between; align-items: center;
-      border-left: 2px solid var(--gold);
-    }
-    .web-addon-text {
-      font-size: 13px; font-weight: 300; color: var(--grey);
-    }
-    .web-addon-price {
-      font-family: var(--font-serif); font-size: 24px;
-      font-weight: 300; color: var(--gold); white-space: nowrap;
-    }
-    .pkg-global-note {
-      font-size: 11px; font-weight: 200; color: var(--grey-lt);
-      letter-spacing: 0.08em; margin-top: 16px; text-align: center;
-    }
-
     /* ── BOOKING ───────────────────────────────────────── */
     #book {
       background: var(--black);
@@ -1047,8 +889,6 @@
       .portfolio-stats { gap: 32px; }
       .pstat { text-align: left; }
       .process-grid { grid-template-columns: 1fr; }
-      .pkg-grid { grid-template-columns: 1fr; }
-      .web-grid { grid-template-columns: 1fr 1fr; }
       .book-grid { grid-template-columns: 1fr; gap: 60px; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
       #about { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
@@ -1130,7 +970,6 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#reel">Our Work</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#packages">Packages</a></li>
   </ul>
   <a href="#book" class="nav-cta"><span>Book a Call</span></a>
 </nav>
@@ -1663,171 +1502,6 @@
   </div>
 </section>
 
-<!-- ── PACKAGES ───────────────────────────────────────── -->
-<section id="packages">
-  <span class="section-eyebrow reveal">Packages</span>
-  <h2 class="section-title reveal">Built around<br><em>your goals.</em></h2>
-  <p class="section-sub reveal">Every package is scoped to your brand and built to deliver results. 50% advance to initiate.</p>
-
-  <div class="packages-tabs reveal">
-    <button class="pkg-tab active" data-pkg="content">Content &amp; Social</button>
-    <button class="pkg-tab" data-pkg="web">Website Development</button>
-  </div>
-
-  <!-- Content packages -->
-  <div id="pkg-content">
-    <div class="pkg-grid">
-      <div class="pkg-card reveal-scale">
-        <span class="pkg-tier">Foundation</span>
-        <div class="pkg-price">₹75,000</div>
-        <span class="pkg-period">/month</span>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list">
-          <li>8 Cinematic Reels / month</li>
-          <li>8 Premium Static Posts</li>
-          <li>Stories Pack (12)</li>
-          <li>Caption Writing &amp; Scheduling</li>
-          <li>1 Shoot Day / month</li>
-          <li>Social Media Scheduling</li>
-          <li>Instagram Growth Strategy</li>
-          <li>Monthly Analytics Report</li>
-        </ul>
-        <a href="#book" class="pkg-btn">Book a Call</a>
-      </div>
-      <div class="pkg-card reveal-scale">
-        <span class="pkg-popular">Most Popular</span>
-        <span class="pkg-tier">Growth</span>
-        <div class="pkg-price">₹1,50,000</div>
-        <span class="pkg-period">/month</span>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list">
-          <li>12–15 Cinematic Reels / month</li>
-          <li>15 Premium Static Posts</li>
-          <li>Stories Pack (20)</li>
-          <li>1 Brand Film (2–3 min)</li>
-          <li>Full Social Media Management</li>
-          <li>Content Calendar &amp; Strategy</li>
-          <li>Google Business Profile Management</li>
-          <li>Google + Meta Ads (ad spend excl.)</li>
-          <li>2 Full Shoot Days / month</li>
-          <li>Monthly Analytics &amp; Strategy Review</li>
-          <li>Priority WhatsApp support</li>
-        </ul>
-        <a href="#book" class="pkg-btn">Book a Call</a>
-      </div>
-      <div class="pkg-card reveal-scale">
-        <span class="pkg-tier">Signature</span>
-        <div class="pkg-price">₹2,75,000</div>
-        <span class="pkg-period">/month</span>
-        <div class="pkg-divider"></div>
-        <ul class="pkg-list">
-          <li>20+ Cinematic Reels / month</li>
-          <li>20+ Premium Static Posts</li>
-          <li>Stories Pack (30)</li>
-          <li>2 Brand Films / month (1–2 min)</li>
-          <li>Full Social Media Management (all platforms)</li>
-          <li>Content Calendar &amp; Strategy</li>
-          <li>Google + Meta Ads Management</li>
-          <li>Event Coverage (1/month)</li>
-          <li>3 Full Shoot Days / month</li>
-          <li>Performance Ads Integration</li>
-          <li>Monthly Analytics &amp; Review</li>
-          <li>Dedicated Account Manager</li>
-        </ul>
-        <a href="#book" class="pkg-btn">Book a Call</a>
-      </div>
-    </div>
-    <p class="pkg-note">3-month minimum · 50% advance · Ad spend billed separately</p>
-  </div>
-
-  <!-- Web packages -->
-  <div id="pkg-web" style="display:none;">
-    <p class="section-sub reveal" style="margin-bottom:40px;">We build cinematic, conversion-focused websites for premium brands — static, dynamic, or full e-commerce. Fast, mobile-first, delivered on schedule.</p>
-    <div class="web-grid">
-      <div class="web-card reveal-scale">
-        <div class="web-tier">Static</div>
-        <div class="web-price">₹35,000</div>
-        <span class="web-type">one-time</span>
-        <span class="web-for">Landing page · Portfolio · Single service</span>
-        <ul class="web-list">
-          <li>Single-page static website</li>
-          <li>Mobile responsive design</li>
-          <li>Booking form + WhatsApp</li>
-          <li>Basic SEO setup</li>
-          <li>Domain connection &amp; deployment</li>
-          <li>1 round of revisions</li>
-          <li>Delivered in 7 days</li>
-        </ul>
-        <a href="#book" class="web-btn">Book a Call</a>
-      </div>
-      <div class="web-card reveal-scale">
-        <div class="web-tier">Business</div>
-        <div class="web-price">₹75,000</div>
-        <span class="web-type">one-time</span>
-        <span class="web-for">Restaurants · Showrooms · Agencies · Clinics</span>
-        <ul class="web-list">
-          <li>Up to 5 pages</li>
-          <li>Cinematic dark premium design</li>
-          <li>Video portfolio integration</li>
-          <li>Booking form + WhatsApp</li>
-          <li>Full SEO + Google Search Console</li>
-          <li>Google Analytics integration</li>
-          <li>2 rounds of revisions</li>
-          <li>Delivered in 14 days</li>
-        </ul>
-        <a href="#book" class="web-btn">Book a Call</a>
-      </div>
-      <div class="web-card popular reveal-scale">
-        <span class="web-popular">Most Popular</span>
-        <div class="web-tier">Dynamic</div>
-        <div class="web-price">₹1,50,000</div>
-        <span class="web-type">one-time</span>
-        <span class="web-for">Media brands · Hotels · Large agencies</span>
-        <ul class="web-list">
-          <li>Up to 8 pages</li>
-          <li>Hero video background</li>
-          <li>Portfolio with video modal + filters</li>
-          <li>Blog / news section (CMS)</li>
-          <li>Advanced animations</li>
-          <li>Full SEO + Google Business setup</li>
-          <li>WhatsApp float + Analytics</li>
-          <li>1-month post-launch support</li>
-          <li>Delivered in 21 days</li>
-        </ul>
-        <a href="#book" class="web-btn">Book a Call</a>
-      </div>
-      <div class="web-card reveal-scale">
-        <div class="web-tier">E-Commerce</div>
-        <div class="web-price">₹2,50,000</div>
-        <span class="web-type">one-time</span>
-        <span class="web-for">Retail · Fashion · Furniture · F&amp;B delivery</span>
-        <ul class="web-list">
-          <li>Up to 50 products listed</li>
-          <li>Shopping cart + checkout</li>
-          <li>Razorpay / UPI / COD integration</li>
-          <li>WhatsApp order notifications</li>
-          <li>Product categories + filters</li>
-          <li>Mobile-first cinematic design</li>
-          <li>Full SEO + Google Shopping</li>
-          <li>Google Analytics + Meta Pixel</li>
-          <li>1-month post-launch support</li>
-          <li>Delivered in 30 days</li>
-        </ul>
-        <a href="#book" class="web-btn">Book a Call</a>
-      </div>
-    </div>
-    <div class="web-addon reveal">
-      <div class="web-addon-text">
-        <strong style="color:var(--white);display:block;margin-bottom:4px;">Add-on Website Maintenance</strong>
-        Content updates, performance monitoring &amp; backups. Available for any website we build.
-      </div>
-      <div class="web-addon-price">₹8,000<span style="font-size:14px;color:var(--grey)">/month</span></div>
-    </div>
-    <p class="pkg-global-note">All prices + GST · 50% advance to start · Domain &amp; hosting not included</p>
-    <p class="pkg-global-note" style="margin-top:8px;">Need something specific? <a href="#book" style="color:var(--gold);text-decoration:none;">Talk to us</a> — we scope custom packages for unique requirements.</p>
-  </div>
-</section>
-
 <!-- ── BOOKING ────────────────────────────────────────── -->
 <section id="book">
   <div class="book-grid">
@@ -1921,7 +1595,6 @@
         <li><a href="#services">Social Media Management</a></li>
         <li><a href="#services">Brand Films</a></li>
         <li><a href="#services">Event Coverage</a></li>
-        <li><a href="#packages">Website Development</a></li>
       </ul>
     </div>
     <div>
@@ -1930,7 +1603,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#reel">Our Work</a></li>
         <li><a href="#case-study">Case Study</a></li>
-        <li><a href="#packages">Packages</a></li>
         <li><a href="#book">Contact</a></li>
       </ul>
     </div>
@@ -2245,17 +1917,6 @@ document.querySelectorAll('.process-step').forEach((step, i) => {
       step.classList.add('active');
       gsap.to(fill, { width: '100%', duration: 1.2, delay: i * 0.15, ease: 'power2.inOut' });
     }
-  });
-});
-
-// ── PACKAGE TABS ──────────────────────────────────────
-document.querySelectorAll('.pkg-tab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.pkg-tab').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const target = btn.getAttribute('data-pkg');
-    document.getElementById('pkg-content').style.display = target === 'content' ? 'block' : 'none';
-    document.getElementById('pkg-web').style.display     = target === 'web'     ? 'block' : 'none';
   });
 });
 
